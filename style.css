@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+    /*can be applied to all of the html elements*/
+    font-family: 'Poppins', sans-serif;
+    /*the second part of the font from google!!*/
+}
+/*background colors and images*/
+.header{
+    min-height: 100vh;
+    width: 100%;
+    /*the gif adds to the moving banner on the website*/
+    background-image: linear-gradient(rgba(147, 149, 158, 0.7),rgba(147, 149, 158, 0.7)),url(images/banner.gif);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+/*this will align the different cta buttons (home, inventory, ect.)*/
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+nav img{
+    width: 150px;
+}
+/*fixing the size of the logo*/
+.nav-links{
+    flex: 1;
+    text-align: right;
+}
+/*the ul and li are basically the list/cta buttons on the top of the page*/
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+/*color and removing the underlining of cta buttons aka the animation :)*/
+.nav-links ul li a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 13px;
+}
+/*underline for the cta buttons*/
+.nav-links ul li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: rgb(77, 66, 68);
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+/*the cta button underline is only seen with cursor on it*/
+.nav-links ul li:hover::after{
+    width: 100%;
+}
+/*to make the text into the center of the website*/
+.text-box{
+    width: 90%;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+/*title size*/
+.text-box h1{
+    font-size:62px;
+}
+/*size of the text under the title and the text color*/
+.text-box p{
+    margin: 10px 0 40px;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+}
+
+/*the hero btn aka the 'Find Your Dream Car Today!' btn/box*/
+.hero-btn{
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+/*when the hero-btn is hovered by the cursor then there will be a different color, this is similar to the underline of the cta buttons*/
+.hero-btn:hover{
+    border: 1px solid rgb(77, 66, 68);
+    background: rgb(77, 66, 68);
+    transition: 1s;
+}
