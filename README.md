@@ -1,13 +1,13 @@
-# ReadMe
+# CAR HUB
 
-2. Preview Site (Option A) - [Testing your GitHub Pages site locally with Jekyll](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll).  This instruction provides instructions for ruby `Gemfile`,`bundle install`.  As an addition add `.gitignore` to avoid seeing build files in commit.   After pre-requisites run this command to obtain prompt for web server ...
+
+Our experts at CAR HUB can help reccomend your dream car today! Take our [quiz]() to find your dream car! Our website can also aide you in your search for cars using the; search and car info included in our website!
+
+
+
 
 ```bash
 bundle exec jekyll serve -H 0.0.0.0 -P 4001 # -H and -P are optional
 ```
 
-### Fonts From
-
-https://fonts.google.com/
-
-
+[Link to our website](https://teamorborb.github.io/CarHubDemos/)
