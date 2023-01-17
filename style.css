@@ -98,11 +98,11 @@ nav img{
 }
 
 #preloader{
-    background: rgb(69, 74, 76) url("https://media.giphy.com/media/3o6ZtjUZAD5Lf0QFLW/giphy.gif") no-repeat center center;
+    background: rgb(77, 66, 68) url("https://media.giphy.com/media/3o6ZtjUZAD5Lf0QFLW/giphy.gif") no-repeat center center;
     background-size: 10%;
-    height: 1000vh;
-    min-width: 1000;
-    min-height: 1000;
+    height: 100vh;
+    min-width: 1000.00;
+    min-height: 1000.00;
     top: -30px;
     width: 100%;
     position: fixed;
