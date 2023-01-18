@@ -107,7 +107,15 @@ nav img{
     background: rgb(77, 66, 68);
     transition: 1s;
 }
-
+/*iphone view*/
+@media(max-width: 700px){
+    .text-box h1{
+        font-size: 20px;
+    }
+    .nav-links ul li{
+        display: block;
+    }
+}
 #preloader{
     background: rgb(77, 66, 68) url("https://media.giphy.com/media/3o6ZtjUZAD5Lf0QFLW/giphy.gif") no-repeat center center;
     background-size: 10%;
