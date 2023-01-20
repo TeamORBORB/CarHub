@@ -1,5 +1,30 @@
-<!-- This is car one of the first row-->
 
+<head>
+    <meta name="viewport" content="with=device-width", initial-scale="1.0">
+    <!--helps make the website responsive-->
+    <title>CARS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!--this is the link of the google font chosen aka fonts.google.com(poppins)!! Please see luna if you want the font to change!!!-->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&family=Rubik+Bubbles&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section class="headerinv">
+        <nav>
+            <a href="index.html"><img src="images/logo.png"></a>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="inventory.html">INVENTORY</a></li>
+                    <li><a href="cart.html">CART</a></li>
+                    <li><a href="home.html">SEARCH</a></li>
+                </ul>
+            </div>
+        </nav>
+
+<!-- This is car one of the first row-->
 <section class="cards">
     <article class="card card--1">
       <div class="card__info-hover">
@@ -183,7 +208,9 @@
     <span class="card__by">by <a href="#" class="card__author" title="author">Tesla</a></span>
   </div>
 </article>  
-</section>
+
+
+   
 
 <style>
     @import url('https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700');
@@ -219,6 +246,9 @@ body {
     justify-content: center;
     -webkit-justify-content: center;
     max-width: 1120px;
+    position: absolute;
+    top: 12em;
+    left: 11em;
 }
 
 .cards2 {
@@ -229,7 +259,8 @@ body {
   -webkit-justify-content: center;
   max-width: 1120px;
   position: absolute;
-  top: 37em;
+  top: 36em;
+  left: 11em;
 }
 
 .cards3 {
@@ -240,7 +271,8 @@ body {
   -webkit-justify-content: center;
   max-width: 1120px;
   position: absolute;
-  top: 61em;
+  top: 60em;
+  left: 11em;
 }
 
 .card--1 .card__img, .card--1 .card__img--hover {
@@ -379,5 +411,6 @@ border-bottom-right-radius: 12px;
 .card:hover .card__info-hover {
     opacity: 1;
 }
+
 
 </style>

@@ -15,6 +15,17 @@
     background-size: cover;
     position: relative;
 }
+
+.headerinv{
+    min-height: 100vh;
+    width: 100%;
+    /*the gif adds to the moving banner on the website*/
+    background-image: linear-gradient(rgba(147, 149, 158, 0.7),rgba(147, 149, 158, 0.7)),url(images/banner.gif); 
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+}  
 /*this will align the different cta buttons (home, inventory, ect.)*/
 nav{
     display: flex;
@@ -96,7 +107,15 @@ nav img{
     background: rgb(77, 66, 68);
     transition: 1s;
 }
-
+/*iphone view*/
+@media(max-width: 700px){
+    .text-box h1{
+        font-size: 20px;
+    }
+    .nav-links ul li{
+        display: block;
+    }
+}
 #preloader{
     background: rgb(77, 66, 68);
     background-size: 10%;
@@ -107,3 +126,131 @@ nav img{
     width: 100%;
     position: fixed;
 }
+/*---CARS---*/
+/*different car brands and descriptions*/
+.cars{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+h1{
+    font-size: 36px;
+    font-weight: 600;
+}
+p{
+    color: rgb(61, 56, 56);
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
+.row{
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-evenly;
+}
+/*box around descriptions*/
+.cars-col{
+    flex-basis: 23%;
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+}
+h3{
+    text-align: center;
+    font-weight: 600;
+    margin: 10px;
+}
+/*hover effect*/
+.cars-col:hover{
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+/*iphone view boxes*/
+@media(max-width: 700px){
+    .row{
+        flex-direction: column;
+    }
+}
+/*-------ABOUT-------*/
+.sub-header{
+    height: 50vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(147, 149, 158, 0.7),rgba(147, 149, 158, 0.7)),url(images/banner.gif);
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    color: #fff;
+
+}
+.sub-header h1{
+    margin-top: 100px;
+}
+/*about padding*/
+.about-us{
+    width: 80%;
+    margin: auto;
+    padding-top: 80px;
+    padding-bottom: 50px;
+}
+.about-col{
+    flex-basis: 48%;
+    padding: 30px 2px;
+}
+.about-col img{
+    width: 100%;
+}
+/*------Mailing------*/
+.sub-search{
+    height: 50vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(147, 149, 158, 0.7),rgba(147, 149, 158, 0.7)),url(images/banner.gif);
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    color: #fff;
+
+}
+.mailing h3{
+    margin-top: 15%;
+    font-weight: 400;
+    font-size: 30px;
+}
+.hero h1{
+    margin-top: 30px;
+    font-size: 30px;
+}
+.hero p{
+    margin: 10px 0 50 px;
+}
+/*----MAIL BAR---*/
+form{
+    background: #fff;
+    display: flex;
+    width: fit-content;
+}
+form input{
+    border: 0;
+    outline: none;
+    padding: 10px 20px;
+    height: 60px;
+    width: 400px;
+    font-size: 16px;
+}
+form button{
+    background: #eb7f41;
+    border: none;
+    outline: none;
+    height: 60px;
+    width: 100px;
+    cursor: pointer;
+}
+span{
+    color:rgb(255, 162, 57);
+    margin-top: 10px;
+    display: block;
+    font-size: 20px;
+}
+
