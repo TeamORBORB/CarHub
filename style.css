@@ -98,7 +98,7 @@ nav img{
 }
 
 #preloader{
-    background: rgb(77, 66, 68) url("https://media.giphy.com/media/3o6ZtjUZAD5Lf0QFLW/giphy.gif") no-repeat center center;
+    background: rgb(77, 66, 68);
     background-size: 10%;
     height: 100vh;
     min-width: 1000.00;
