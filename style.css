@@ -259,3 +259,40 @@ span{
     padding-left: 00px;  
 }
 
+
+.title{
+    text-align:center;
+}
+
+.About-us-title{
+    position:absolute;
+    top: 200x;
+    left: 50%;
+    transform:translate(-60%,0)
+}
+
+.description{
+    position:absolute;
+    top:180px;
+    right: 92px;
+    text-align:center;
+    width:90%
+}
+
+
+.bottom{
+    width: 35px;
+    height: 35px;
+    transition: .5s;
+    float: left;
+    box-shadow: -2px 2px 0 darkgrey;
+    position:absolute;
+    right:50%;
+    bottom:30px;
+}
+  
+
+  
+.bottom {
+    transform: rotate(315deg);
+}
