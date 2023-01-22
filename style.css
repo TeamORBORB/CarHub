@@ -117,7 +117,7 @@ nav img{
     }
 }
 #preloader{
-    background: rgb(77, 66, 68) url("https://media.giphy.com/media/3o6ZtjUZAD5Lf0QFLW/giphy.gif") no-repeat center center;
+    background: rgb(77, 66, 68);
     background-size: 10%;
     height: 100vh;
     min-width: 1000.00;
@@ -254,3 +254,45 @@ span{
     font-size: 20px;
 }
 
+.lb{
+    padding-top: 25px;  
+    padding-left: 00px;  
+}
+
+
+.title{
+    text-align:center;
+}
+
+.About-us-title{
+    position:absolute;
+    top: 200x;
+    left: 50%;
+    transform:translate(-60%,0)
+}
+
+.description{
+    position:absolute;
+    top:180px;
+    right: 92px;
+    text-align:center;
+    width:90%
+}
+
+
+.bottom{
+    width: 35px;
+    height: 35px;
+    transition: .5s;
+    float: left;
+    box-shadow: -2px 2px 0 darkgrey;
+    position:absolute;
+    right:50%;
+    bottom:30px;
+}
+  
+
+  
+.bottom {
+    transform: rotate(315deg);
+}
