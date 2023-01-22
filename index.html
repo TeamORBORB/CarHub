@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="with=device-width", initial-scale="1.0">
+    <!--helps make the website responsive-->
+    <title>CARS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!--this is the link of the google font chosen aka fonts.google.com(poppins)!! Please see luna if you want the font to change!!!-->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&family=Rubik+Bubbles&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section class="header">
+        <nav>
+            <a href="index.html"><img src="images/logo.png"></a>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="inventory.html">INVENTORY</a></li>
+                    <li><a href="cart.html">CART</a></li>
+                    <li><a href ="Login.html"> Login </a></li>
+                    <li><a href="home.html">SEARCH</a></li>
+                    <li><a href="Chatbox.html">Chatbox</a></li>
+                    <li><a href = "contactus.html"> Contact Us</a></li>
+                </ul>
+            </div>
+        </nav>
+<!--website content-->
+<div class="text-box">
+    <h1>Largest Selection of Cars Online</h1>
+    <!--the <br> means there is a line break and makes the text into two lines-->
+    <p>Looking for your dream car? Look no further! Our extensive inventory of new and used cars<br>has something for everyone. Whether you're in the market for a fuel-efficient sedan, a spacious SUV, <br>or a powerful pickup truck, we've got you covered.</p>
+    <!--button to next link-->
+    <a href="inventory.html" class="hero-btn">Find Your Dream Car Today!</a>
+</div>
+
+    </section>
+    <body>
+        
+        <link rel="stylesheet" href="/static\css\style.css">
+        <div id ="preloader"></div>
+        <script>
+            var loader = document.getElementById("preloader");
+            window.addEventListener("load", function(){
+                loader.style.display = "none";
+            })
+        </script>
+
+
+
+        <div class="lb">
+            <style>
+                body {font-family: Arial, Helvetica, sans-serif;}
+                
+                /* Full-width input fields */
+                input[type=text], input[type=password] {
+                  width: 100%;
+                  padding: 12px 20px;
+                  margin: 8px 0;
+                  display: inline-block;
+                  border: 2px solid #1A1A1A;
+                  border-radius: 15px;
+                  box-sizing: border-box;
+                      /*appearance: none;
+                  background-color: transparent;
+                  border: 2px solid #1A1A1A;
+                  border-radius: 15px;
+                  box-sizing: border-box;
+                  */
+                }
+                
+                
+                /* Set a style for all buttons */
+                .button-28 {
+                  appearance: none;
+                  background-color: transparent;
+                  border: 2px solid #1A1A1A;
+                  border-radius: 15px;
+                  box-sizing: border-box;
+                  color: #3B3B3B;
+                  cursor: pointer;
+                  display: inline-block;
+                  font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+                  font-size: 16px;
+                  font-weight: 600;
+                  line-height: normal;
+                  margin: 0;
+                  min-height: 60px;
+                  min-width: 0;
+                  outline: none;
+                  padding: 16px 60px;
+                  text-align: center;
+                  text-decoration: none;
+                  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+                  user-select: none;
+                  -webkit-user-select: none;
+                  touch-action: manipulation;
+                  width: 100%;
+                  will-change: transform;
+                }
+                
+                .button-28:disabled {
+                  pointer-events: none;
+                }
+                
+                .button-28:hover {
+                  color: #fff;
+                  background-color: #1A1A1A;
+                  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+                  transform: translateY(-2px);
+                }
+                
+                .button-28:active {
+                  box-shadow: none;
+                  transform: translateY(0);
+                }
+                
+                
+                
+                .button-29 {
+                  appearance: none;
+                  background-color: transparent;
+                  border: 2px solid #1A1A1A;
+                  border-radius: 15px;
+                  box-sizing: border-box;
+                  color: #3B3B3B;
+                  cursor: pointer;
+                  display: inline-block;
+                  font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+                  font-size: 16px;
+                  font-weight: 600;
+                  line-height: normal;
+                  margin: 0;
+                  min-height: 50px;
+                  min-width: 0;
+                  outline: none;
+                  padding: 1px 1x;
+                  text-align: center;
+                  text-decoration: none;
+                  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+                  user-select: none;
+                  -webkit-user-select: none;
+                  touch-action: manipulation;
+                  width: 200px;
+                  will-change: transform;
+                }
+                
+                .button-29:disabled {
+                  pointer-events: none;
+                }
+                
+                .button-29:hover {
+                  color: #fff;
+                  background-color: #1A1A1A;
+                  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+                  transform: translateY(-2px);
+                }
+                
+                .button-29:active {
+                  box-shadow: none;
+                  transform: translateY(0);
+                }
+                /* Extra styles for the cancel button */
+                .cancelbtn {
+                  width: auto;
+                  padding: 10px 18px;
+                  background-color: #f44336;
+                }
+                
+                /* Center the image and position the close button */
+                .imgcontainer {
+                  text-align: center;
+                  margin: 24px 0 12px 0;
+                  position: relative;
+                }
+                
+                
+                .container {
+                  padding: 16px;
+                  border: 2px solid #fefefe;
+                  border-radius: 15px;
+                  box-sizing: border-box;
+                  appearance: none;
+                  background-color: transparent;
+                  border-radius: 15px;
+                  box-sizing: border-box;
+                }
+                
+                span.psw {
+                  float: right;
+                  padding-top: 16px;
+                }
+                
+                /* The Modal (background) */
+                .modal {
+                  display: none; /* Hidden by default */
+                  position: fixed; /* Stay in place */
+                  z-index: 1; /* Sit on top */
+                  left: 0;
+                  top: 0;
+                  width: 100%; /* Full width */
+                  height: 100%; /* Full height */
+                  overflow: auto; /* Enable scroll if needed */
+                  background-color: rgb(0,0,0); /* Fallback color */
+                  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+                  padding-top: 60px;
+                  
+                }
+                
+                /* Modal Content/Box */
+                .modal-content {
+                  background-color: #fefefe;
+                  margin: 5% auto 15% auto; 
+                  border: 2px solid #1A1A1A;
+                  border-radius: 15px;
+                  width: 80%; 
+                    /*appearance: none;
+                  background-color: transparent;
+                  border: 2px solid #1A1A1A;
+                  border-radius: 15px;
+                  box-sizing: border-box;
+                  */
+                }
+                
+                /* The Close Button (x) */
+                .close {
+                  position: absolute;
+                  right: 25px;
+                  top: 0;
+                  color: #000;
+                  font-size: 35px;
+                  font-weight: bold;
+                }
+                
+                .close:hover,
+                .close:focus {
+                  color: red;
+                  cursor: pointer;
+                }
+                
+            </style>
+                </head>
+                <body>
+                <!--Sign In-->  
+                <button class="button-28" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign in</button>
+                <div id="id01" class="modal">
+                  <form class="modal-content animate" action="/action_page.php" method="post">
+                    <div class="imgcontainer">
+                      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                    </div>
+                
+                    <div class="container">
+                      <label for="uname"><b>Username</b></label>
+                      <input type="text" placeholder="Enter Username" name="uname" required>
+                
+                      <label for="psw"><b>Password</b></label>
+                      <input type="password" placeholder="Enter Password" name="psw" required>
+                        
+                      <button class="button-29" type="submit">Sign in</button>
+                    </div>
+                        
+                    <div class="container" style="background-color:#f1f1f1">
+                    </div>
+                  </form>
+                </div>
+                
+                <!--Sign Up-->
+                <button class="button-28" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign Up</button>
+                <div id="id01" class="modal">
+                    <form class="modal-content animate" action="/action_page.php" method="post">
+                      <div class="imgcontainer">
+                        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                      </div>
+                  
+                      <div class="container">
+                        <label for="Email"><b>Email</b></label>
+                        <input type="text" placeholder="Enter Username" name="uname" required>
+                
+                        <div class="container">
+                        <label for="uname"><b>Username</b></label>
+                        <input type="text" placeholder="Enter Username" name="uname" required>
+                  
+                        <label for="psw"><b>Password</b></label>
+                        <input type="password" placeholder="Enter Password" name="psw" required>
+                          
+                        <button class="button-29" type="submit">Sign Up</button>
+                      </div>
+                          
+                      <div class="container" style="background-color:#f1f1f1">
+                      </div>
+                    </form>
+                  </div>
+                  
+                <script>
+                // Get the modal
+                var modal = document.getElementById('id01');
+                
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function(event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                }
+                </script>
+            </body>
+        </div>
+    </body>
+
+<!---CARS--->
+<section class="cars">
+    <h1>CARS</h1>
+    <p>We offer a diverse range of vehicles to choose from, catering to different needs and preferences of customers</p>
+
+    <div class="row">
+        <div class="cars-col">
+            <h3>Luxury Cars</h3>
+            <p>These cars are designed for those who want the best of the best in terms of performance, comfort, and technology.</p>
+        </div>
+        <div class="cars-col">
+            <h3>Electric Cars</h3>
+            <p>These cars are powered by electricity and have zero emissions.</p>
+        </div>
+         <div class="cars-col">
+            <h3>Sports Cars</h3>
+            <p>These cars are designed for speed and performance. They often have powerful engines, advanced suspension systems, and aerodynamic designs.</p>
+        </div>
+        <div class="cars-col">
+            <h3>Family Cars</h3>
+            <p>These cars are designed to accommodate families, with spacious interiors and plenty of storage space.</p>
+    </div>
+</section>
+
+<!--SOCIALS-->
+<section class="socials">
+    <p>instagram</p>
+</section>
+
+
+</body>
+</html>
