@@ -31,7 +31,7 @@
     width: 220px;
     margin: 35px auto;
     position:relative;
-    box-shadow: 0 0 20px 9px #ff61241f;
+    box-shadow: 0 0 20px 9px #CBC3E3;
     border-radius:30px;
 
 }
@@ -51,7 +51,7 @@
     position: absolute;
     width: 110px;
     height: 100%;
-    background: linear-gradient(to right, #ff105f,#ffad06);
+    background: linear-gradient(to right, #BF40BF,#CBC3E3);
     border-radius:30px;
     transition:.5s;
 }
@@ -96,7 +96,7 @@
     cursor: pointer;
     display: block;
     margin: auto;
-    background: linear-gradient(to right, #ff105f,#ffad06);
+    background: linear-gradient(to right, #BF40BF,#CBC3E3);
     border:0;
     outline:none;
     border-radius:30px;
@@ -105,6 +105,10 @@
 
 .check-box{
     margin:30px 10px 30px 0;
+}
+
+.change{
+    margin:15px 0;
 }
 
 span{
@@ -124,9 +128,9 @@ span{
 
 
 .guest{
-    top:410px;
-    position:absolute;
-    right: 130px;
+    top: 30px;
+    position:relative;
+    left: 65px;
     transition: 0.5s;
     text-decoration:none;
 
@@ -135,5 +139,61 @@ span{
 .guestlink{
     text-decoration:none;
     color: lightgrey;
+    position:relative;
+
 }
 
+
+
+
+
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  #myBtn{
+    position:absolute;
+    bottom:100px;
+    left:530px;
+    width:200px;
+    border-radius:90px;
+    transition:.5s;
+    color: blue;
+  }

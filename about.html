@@ -4,7 +4,7 @@
     <meta name="viewport" content="with=device-width", initial-scale="1.0">
     <!--helps make the website responsive-->
     <title>CARS</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/static\css\style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!--this is the link of the google font chosen aka fonts.google.com(poppins)!! Please see luna if you want the font to change!!!-->
@@ -24,26 +24,57 @@
                 </ul>
             </div>
         </nav>
- <h1>About Us</h1>
+    <div class = "About-us-title">
+        <h1>About Us</h1>
+    </div>
+    <div class = "description">
+        <p> Welcome to our car page! We are a team of car enthusiasts and experts dedicated to providing
+            our readers with the latest news, reviews, and information on the automotive industry.
+            Our goal is to be your go-to source for all things related to cars. Whether you're in the market 
+            for a new vehicle, looking to stay up-to-date on the latest industry trends, or simply want to 
+            learn more about your favorite car models, we've got you covered.
+            Our team is made up of experienced writers and researchers who have a passion for cars and the 
+            automotive industry. We take pride in providing our readers with accurate and informative
+            content that is easy to understand.
+            In addition to our in-depth articles and reviews, we also offer a wide range of other features,
+            including buying guides, car comparisons, and more. We also keep our readers updated with the 
+            latest car shows, events, and industry news.
+            Thank you for visiting our car page. We hope you find our content informative and enjoyable. If 
+            you have any questions or suggestions, please don't hesitate to contact us. We value your feedback and strive to improve our site every day.
+        </p>
+    </div>
+    
+
+    <div class="bottom"></div>
+
 </section>
       <!-- Begin Page Content-->
 
 <!--ab us-->
-<section class=""about-us">
+<section class="about-us">
 
     <div class="row">
+
         <div class="about-col">
             <h1>Subscribe Today! For Free!</h1>
             <p>Stay informed about new car models and releases! Learn more about the latest industry trends and developments! And get early access to new information about cars!</p>
             <form>
                 <input type="email" name="Email" placeholder="abc@example.com" required>
-                <button type="submit"><img src="images/iconsend.png" width="30px"></button>
+                <button type="submit"><img src="" width="30px"></button>
+                <!-- Image was not working put iamge into an issue to make a github link -->
             </form>
             <span>Thanks For Subscribing!</span>
         </div>
-        <div class=""about-col">
+        <div class="about-col">
         <img src="images/about.png">
     </div>
     </div>
+        <div id ="preloader"></div>
+        <script>
+            var loader = document.getElementById("preloader");
+            window.addEventListener("load", function(){
+                loader.style.display = "none";
+            })
+     </script>
 </section>
-
+</body>
