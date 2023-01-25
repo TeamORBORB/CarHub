@@ -25,6 +25,7 @@
             </div>
         </nav>
 
+<div class="container">
 <!-- This is car one of the first row-->
 <section class="cards">
   <article class="card card--1">
@@ -210,16 +211,23 @@
   <span class="card__by">by <a href="#" class="card__author" title="author">Tesla</a></span>
 </div>
 </article>  
-<div>
+</section>
+
+</div>
+</section>
 <script>
   var loader = document.getElementById("preloader");
   window.addEventListener("load", function(){
   loader.style.display = "none";
   })
 </script>
+<<<<<<< HEAD
 <script>
   clickLike
 </script>
+=======
+
+>>>>>>> 4c43709 (fixing the alignment on the inventory)
 </div>
 <style>
   @import url('https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700');
@@ -247,6 +255,13 @@ justify-content: center;
 align-items: center;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+align-items:  center;
+height: 50px;
+}
 
 .cards {
   width: 100%;
@@ -255,9 +270,7 @@ align-items: center;
   justify-content: center;
   -webkit-justify-content: center;
   max-width: 1120px;
-  position: absolute;
-  top: 12em;
-  left: 11em;
+  margin-bottom: 30px;
 }
 
 .cards2 {
@@ -267,21 +280,17 @@ display: -webkit-flex;
 justify-content: center;
 -webkit-justify-content: center;
 max-width: 1120px;
-position: absolute;
-top: 36em;
-left: 11em;
+margin-bottom: 30px;
 }
 
 .cards3 {
-width: 100%;
+  width: 100%;
 display: flex;
 display: -webkit-flex;
 justify-content: center;
 -webkit-justify-content: center;
 max-width: 1120px;
-position: absolute;
-top: 60em;
-left: 11em;
+margin-bottom: 30px;
 }
 
 .card--1 .card__img, .card--1 .card__img--hover {
