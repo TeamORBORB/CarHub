@@ -20,7 +20,7 @@
                     <li><a href="about.html">ABOUT</a></li>
                     <li><a href="inventory.html">INVENTORY</a></li>
                     <li><a href="cart.html">CART</a></li>
-                    <li><a href="home.html">SEARCH</a></li>
+                    <li><a href="profile.html">PROFILE</a></li>
                 </ul>
             </div>
         </nav>
@@ -138,11 +138,10 @@
                   font-size: 16px;
                   font-weight: 600;
                   line-height: normal;
-                  margin: 0;
+                  padding: 12px 34px;
                   min-height: 50px;
                   min-width: 0;
                   outline: none;
-                  padding: 1px 1x;
                   text-align: center;
                   text-decoration: none;
                   transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
@@ -178,7 +177,8 @@
                 /* Center the image and position the close button */
                 .imgcontainer {
                   text-align: center;
-                  margin: 24px 0 12px 0;
+                  margin-left: auto;
+                  margin-right: auto;
                   position: relative;
                 }
                 
@@ -250,6 +250,7 @@
                 </head>
                 <body>
                 <!--Sign In-->  
+                
                 <button class="button-28" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign in</button>
                 <div id="id01" class="modal">
                   <form class="modal-content animate" action="/action_page.php" method="post">
@@ -258,10 +259,10 @@
                     </div>
                 
                     <div class="container">
-                      <label for="uname"><b>Username</b></label>
+                      <label for="uname"><b></b></label>
                       <input type="text" placeholder="Enter Username" name="uname" required>
                 
-                      <label for="psw"><b>Password</b></label>
+                      <label for="psw"><b></b></label>
                       <input type="password" placeholder="Enter Password" name="psw" required>
                         
                       <button class="button-29" type="submit">Sign in</button>
@@ -299,8 +300,8 @@
                     </div>
                   </form>
                 </div>
-                  
                 <script>
+                
                 // Get the modal
                 var modal = document.getElementById('id01');
                 
