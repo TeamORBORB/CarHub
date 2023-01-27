@@ -28,6 +28,17 @@
  
  
  } 
+
+ .headerlexus{
+   min-height: 100vh;
+    width: 100%;
+    /*the gif adds to the moving banner on the website*/
+    background-image: url(https://user-images.githubusercontent.com/111478625/215028710-ca85fe3a-599f-49b1-bc62-f623d2f88c40.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+ }
  /*this will align the different cta buttons (home, inventory, ect.)*/
  nav{
     display: flex;
@@ -137,6 +148,7 @@
     text-align: center;
     padding-top: 100px;
  }
+
  h1{
     font-size: 36px;
     font-weight: 600;
@@ -187,7 +199,6 @@
     text-align: center;
     color: #fff;
  
- 
  }
  .sub-header h1{
     margin-top: 100px;
@@ -206,6 +217,8 @@
  .about-col img{
     width: 100%;
  }
+
+ .
  /*------Mailing------*/
  .sub-search{
     height: 50vh;
