@@ -29,7 +29,38 @@
  
  } 
 
- .headerlexus{
+ .headerBMWm340i{
+   min-height: 100vh;
+   width: 100%;
+   /*the gif adds to the moving banner on the website*/
+   background-image: url(https://user-images.githubusercontent.com/111478625/215885926-8e2a326b-ec99-4862-96b5-9162c91b23ea.png);
+   background-position: center;
+   background-size: cover;
+   position: relative;  
+}
+
+
+ .headerVWjetta{
+   min-height: 100vh;
+   width: 100%;
+   /*the gif adds to the moving banner on the website*/
+   background-image: url( https://user-images.githubusercontent.com/111478625/215884488-2cacea34-f75a-45d9-bc7e-4bad4bb3bc71.png);
+   background-position: center;
+   background-size: cover;
+   position: relative;  
+}
+
+ .headertoyotaGr86{
+    min-height: 100vh;
+    width: 100%;
+    /*the gif adds to the moving banner on the website*/
+    background-image: url(https://user-images.githubusercontent.com/111478625/215884213-e05e17af-d275-4ef2-b056-7c343ec4832a.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;  
+ }
+
+ .headerlexusRCF{
    min-height: 100vh;
     width: 100%;
     /*the gif adds to the moving banner on the website*/
