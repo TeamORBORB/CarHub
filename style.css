@@ -29,6 +29,26 @@
  
  } 
 
+.header2019hondacivic{
+   min-height: 100vh;
+   width: 100%;
+   /*the gif adds to the moving banner on the website*/
+   background-image: url(https://user-images.githubusercontent.com/111478625/216135564-865b3c54-d1b6-45be-a506-826b66d488c9.png);
+   background-position: center;
+   background-size: cover;
+   position: relative;    
+}
+
+.headerBMW535i{
+   min-height: 100vh;
+   width: 100%;
+   /*the gif adds to the moving banner on the website*/
+   background-image: url(https://user-images.githubusercontent.com/111478625/216134760-3e710f61-6aeb-4a40-a05d-7f851a1a490d.png);
+   background-position: center;
+   background-size: cover;
+   position: relative;    
+}
+
  .headerBMWm340i{
    min-height: 100vh;
    width: 100%;
