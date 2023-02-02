@@ -4,14 +4,13 @@
     <meta name="viewport" content="with=device-width", initial-scale="1.0">
     <!--helps make the website responsive-->
     <title>CARS</title>
-    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../../../style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!--this is the link of the google font chosen aka fonts.google.com(poppins)!! Please see luna if you want the font to change!!!-->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&family=Rubik+Bubbles&display=swap" rel="stylesheet">
 </head>
 <body>
-    <section class="header">
+    <section class="headerTeslaS">
         <nav>
             <a href="../../index.html"><img src="../../images/logo.png"></a>
             <div class="nav-links">
@@ -19,10 +18,23 @@
                     <li><a href="../../index.html">HOME</a></li>
                     <li><a href="../../about.html">ABOUT</a></li>
                     <li><a href="../../inventory.html">INVENTORY</a></li>
-                    <li><a href="../../cart.html">CART</a></li>
-                    <li><a href ="../../Login.html"> Login </a></li>
-                    <li><a href="../../home.html">PROFILE</a></li>
-                    <li><a href = "../../contactus.html"> Contact Us</a></li>
-                </ul>
+                    <li><a href="../../Quiz.html">QUIZ</a></li>
+                    <li><a href="../../profile.html">PROFILE</a></li>
+                    </ul>
+                    <script>
+                    var loader = document.getElementById("preloader");
+                    window.addEventListener("load", function(){
+                        loader.style.display = "none";
+                    })
+                </script>
             </div>
         </nav>
+
+
+
+<div class="text-box">
+    <h1>2021 Tesla Model S</h1>
+        <!--the <br> means there is a line break and makes the text into two lines-->
+        <p>Starting at $$69,420</p>
+        <!--button to next link-->
+        <a href="inventory.html" class="inv-btn">Explore the Tesla Model S</a>
