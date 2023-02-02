@@ -25,9 +25,27 @@
     background-position: center;
     background-size: cover;
     position: relative;
- 
- 
  } 
+
+ .headerTeslaS{
+   min-height: 100vh;
+   width: 100%;
+   /*the gif adds to the moving banner on the website*/
+   background-image: url(https://user-images.githubusercontent.com/111478625/216450140-ec3e9f27-c4b7-4b92-9982-3d974e8bff7d.png);
+   background-position: center;
+   background-size: cover;
+   position: relative;    
+ }
+
+.header2020ToyotaCamry{
+   min-height: 100vh;
+   width: 100%;
+   /*the gif adds to the moving banner on the website*/
+   background-image: url(https://user-images.githubusercontent.com/111478625/216449299-a2b5ee22-1ab1-49fa-ab97-4dcffd27ae7f.png);
+   background-position: center;
+   background-size: cover;
+   position: relative;    
+}
 
 .header2019hondacivic{
    min-height: 100vh;
