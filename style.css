@@ -27,6 +27,227 @@
     position: relative;
  } 
 
+ .header2022BMWM4{
+   min-height: 100vh;
+   width: 100%;
+   /*the gif adds to the moving banner on the website*/
+   background-image: url(https://user-images.githubusercontent.com/111478625/216453384-e8763a12-3e59-43cb-a90b-213b0e5a0de8.png);
+   background-position: center;
+   background-size: cover;
+   position: relative;   
+}
+
+ .header2016BuickEnclave{
+   min-height: 100vh;
+   width: 100%;
+   /*the gif adds to the moving banner on the website*/
+   background-image: url(https://user-images.githubusercontent.com/111478625/216453384-e8763a12-3e59-43cb-a90b-213b0e5a0de8.png);
+   background-position: center;
+   background-size: cover;
+   position: relative;   
+}
+
+
+ .header2019ChevroletCorvette{
+   min-height: 100vh;
+   width: 100%;
+   /*the gif adds to the moving banner on the website*/
+   background-image: url(https://user-images.githubusercontent.com/111478625/216453384-e8763a12-3e59-43cb-a90b-213b0e5a0de8.png);
+   background-position: center;
+   background-size: cover;
+   position: relative;   
+}
+
+ .header2020ChevroletSuburban{
+   min-height: 100vh;
+   width: 100%;
+   /*the gif adds to the moving banner on the website*/
+   background-image: url(https://user-images.githubusercontent.com/111478625/216453384-e8763a12-3e59-43cb-a90b-213b0e5a0de8.png);
+   background-position: center;
+   background-size: cover;
+   position: relative;   
+}
+
+ .header2018LincolnContinentalX{
+   min-height: 100vh;
+   width: 100%;
+   /*the gif adds to the moving banner on the website*/
+   background-image: url(https://user-images.githubusercontent.com/111478625/216453384-e8763a12-3e59-43cb-a90b-213b0e5a0de8.png);
+   background-position: center;
+   background-size: cover;
+   position: relative;   
+}
+
+ .header2018Chrysler300{
+   min-height: 100vh;
+   width: 100%;
+   /*the gif adds to the moving banner on the website*/
+   background-image: url(https://user-images.githubusercontent.com/111478625/216453384-e8763a12-3e59-43cb-a90b-213b0e5a0de8.png);
+   background-position: center;
+   background-size: cover;
+   position: relative;   
+}
+
+ .header2020HondaCivicTypeR{
+   min-height: 100vh;
+   width: 100%;
+   /*the gif adds to the moving banner on the website*/
+   background-image: url(https://user-images.githubusercontent.com/111478625/216453384-e8763a12-3e59-43cb-a90b-213b0e5a0de8.png);
+   background-position: center;
+   background-size: cover;
+   position: relative;   
+}
+
+ .header2022FordBronco{
+   min-height: 100vh;
+   width: 100%;
+   /*the gif adds to the moving banner on the website*/
+   background-image: url(https://user-images.githubusercontent.com/111478625/216453384-e8763a12-3e59-43cb-a90b-213b0e5a0de8.png);
+   background-position: center;
+   background-size: cover;
+   position: relative;   
+}
+
+ .header2017FordMustang{
+   min-height: 100vh;
+   width: 100%;
+   /*the gif adds to the moving banner on the website*/
+   background-image: url(https://user-images.githubusercontent.com/111478625/216453384-e8763a12-3e59-43cb-a90b-213b0e5a0de8.png);
+   background-position: center;
+   background-size: cover;
+   position: relative;   
+}
+
+ .header2019DodgeChallenger{
+   min-height: 100vh;
+   width: 100%;
+   /*the gif adds to the moving banner on the website*/
+   background-image: url(https://user-images.githubusercontent.com/111478625/216453384-e8763a12-3e59-43cb-a90b-213b0e5a0de8.png);
+   background-position: center;
+   background-size: cover;
+   position: relative;   
+}
+
+ .header2016Nissan370Z{
+   min-height: 100vh;
+   width: 100%;
+   /*the gif adds to the moving banner on the website*/
+   background-image: url(https://user-images.githubusercontent.com/111478625/216716068-ae382ad2-a6f3-4b93-b62f-25056dcad225.png);
+   background-position: center;
+   background-size: cover;
+   position: relative;   
+}
+
+ .header2016InfinitiQq50{
+   min-height: 100vh;
+   width: 100%;
+   /*the gif adds to the moving banner on the website*/
+   background-image: url(https://user-images.githubusercontent.com/111478625/216715510-13b0907a-bc66-439d-941e-e203e6e65ab3.png);
+   background-position: center;
+   background-size: cover;
+   position: relative;   
+}
+
+ .header2019HondaCivicTypeR{
+   min-height: 100vh;
+   width: 100%;
+   /*the gif adds to the moving banner on the website*/
+   background-image: url(https://user-images.githubusercontent.com/111478625/216715061-3ee670cb-7714-4cc9-a773-4809778d4a0f.png);
+   background-position: center;
+   background-size: cover;
+   position: relative;   
+}
+
+ .header2020AudiQ5{
+   min-height: 100vh;
+   width: 100%;
+   /*the gif adds to the moving banner on the website*/
+   background-image: url(https://user-images.githubusercontent.com/111478625/216714460-3b5b5a79-53ea-4357-8a59-44a93a8185ea.png);
+   background-position: center;
+   background-size: cover;
+   position: relative;   
+}
+
+ .header2017DodgeCharger{
+   min-height: 100vh;
+   width: 100%;
+   /*the gif adds to the moving banner on the website*/
+   background-image: url(https://user-images.githubusercontent.com/111478625/216713644-313a92cf-e829-4e59-9e16-77cb4b4fe0a5.png);
+   background-position: center;
+   background-size: cover;
+   position: relative;   
+}
+
+ .header2017HondaOddyssey{
+   min-height: 100vh;
+   width: 100%;
+   /*the gif adds to the moving banner on the website*/
+   background-image: url(https://user-images.githubusercontent.com/111478625/216713140-bbe9923f-c014-4a58-9e97-b8d150864e77.png);
+   background-position: center;
+   background-size: cover;
+   position: relative;   
+}
+
+ .header2016ToyotaSienna{
+   min-height: 100vh;
+   width: 100%;
+   /*the gif adds to the moving banner on the website*/
+   background-image: url(https://user-images.githubusercontent.com/111478625/216712060-3f00f29e-3a1e-40b4-8395-43a8b8c28e37.png);
+   background-position: center;
+   background-size: cover;
+   position: relative;   
+}
+
+ .header2022SubaruWRXSTI{
+   min-height: 100vh;
+   width: 100%;
+   /*the gif adds to the moving banner on the website*/
+   background-image: url(https://user-images.githubusercontent.com/111478625/216457973-61ed77b4-7304-4dc1-a095-9463dc85bb58.png);
+   background-position: center;
+   background-size: cover;
+   position: relative;   
+}
+
+ .header2019SubaruOutlander{
+   min-height: 100vh;
+   width: 100%;
+   /*the gif adds to the moving banner on the website*/
+   background-image: url(https://user-images.githubusercontent.com/111478625/216457687-8d29f77d-7143-430d-9579-22868f2c18d5.png);
+   background-position: center;
+   background-size: cover;
+   position: relative;   
+}
+
+ .header2022GenesisG90{
+   min-height: 100vh;
+   width: 100%;
+   /*the gif adds to the moving banner on the website*/
+   background-image: url(https://user-images.githubusercontent.com/111478625/216456807-a9e57a43-ae56-4c52-b5da-7b76e8beadf6.png);
+   background-position: center;
+   background-size: cover;
+   position: relative;   
+}
+
+ .header2019ToyotaHighlander{
+   min-height: 100vh;
+   width: 100%;
+   /*the gif adds to the moving banner on the website*/
+   background-image: url(https://user-images.githubusercontent.com/111478625/216453384-e8763a12-3e59-43cb-a90b-213b0e5a0de8.png);
+   background-position: center;
+   background-size: cover;
+   position: relative;   
+}
+
+.header2017AudiS4{
+   min-height: 100vh;
+   width: 100%;
+   /*the gif adds to the moving banner on the website*/
+   background-image: url(https://user-images.githubusercontent.com/111478625/216452528-0a298d1c-ff36-4872-9681-1df232deb47a.png);
+   background-position: center;
+   background-size: cover;
+   position: relative;   
+}
+
  .headerTeslaS{
    min-height: 100vh;
    width: 100%;
@@ -262,7 +483,7 @@
  .sub-header{
     height: 50vh;
     width: 100%;
-    background-image: linear-gradient(rgba(147, 149, 158, 0.7),rgba(147, 149, 158, 0.7)),url(images/banner.gif);
+    background-image: linear-gradient(rgba(147, 149, 158, 0.7),rgba(147, 149, 158, 0.7)),url(images/banner2.gif);
     background-position: center;
     background-size: cover;
     text-align: center;
@@ -270,29 +491,29 @@
  
  }
  .sub-header h1{
-    margin-top: 100px;
+    padding-top: 150px;
  }
  /*about padding*/
  .about-us{
     width: 80%;
-    margin: auto;
     padding-top: 80px;
     padding-bottom: 50px;
  }
- .about-col{
-    flex-basis: 48%;
-    padding: 30px 2px;
- }
- .about-col img{
-    width: 100%;
- }
 
- .
+.about-col{
+   flex-basis: 48%;
+   padding: 30px 2px;
+}
+.about-col img{
+   width: 100%;
+}
+
  /*------Mailing------*/
+
  .sub-search{
     height: 50vh;
     width: 100%;
-    background-image: linear-gradient(rgba(147, 149, 158, 0.7),rgba(147, 149, 158, 0.7)),url(images/banner.gif);
+    background-image: linear-gradient(rgba(147, 149, 158, 0.7),rgba(147, 149, 158, 0.7)),url(images/banner2.gif);
     background-position: center;
     background-size: cover;
     text-align: center;
