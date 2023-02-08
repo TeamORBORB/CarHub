@@ -1,9 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>UserID Storage</h2>
+
 <script>
-    function setID() {
-      var userID = prompt("ID", userID);
-      localStorage.setItem("userID", userID);
-    }
-    
-    var storedID = localStorage.getItem("userID");
-    </script>
-    
+function setID() {
+  var userID = prompt("ID", userID);
+  localStorage.setItem("userID", userID);
+}
+
+var storedID = localStorage.getItem("userID");
+</script>
+
+<button onclick="setID()">Input ID</button>
+
+</body>
+</html>
