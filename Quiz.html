@@ -30,70 +30,31 @@
             </div>
         </nav>
       <!-- Begin Page Content-->
+      <html>
+      <body>
+      
+      <h2>Testing Prompt</h2>
+      
+      <button onclick="userId()">Try it</button>
+      
+      <script>
+      function userId() {
+        prompt("Please input your ID");
+      }
+      </script>
+      <body>
 
-      <div class = "findcar">
-        <h1>Find Your Dream Car Today</h1>
-    </div>
-    <div class = "quiz">
-        <b>1. Question
-        </b>
-        <p> a. answer
-            <br>
-            b. answer
-            <br>
-            c. answer
-            <br>
-            d. answer
-        </p>
-<br>
-<br>
-<b>1. Question
-</b>
-<p> a. answer
-    <br>
-    b. answer
-    <br>
-    c. answer
-    <br>
-    d. answer
-</p>
-<br>
-<br>
-<b>2. Question
-</b>
-<p> a. answer
-    <br>
-    b. answer
-    <br>
-    c. answer
-    <br>
-    d. answer
-</p>
-<br>
-<br>
-<b>3. Question
-</b>
-<p> a. answer
-    <br>
-    b. answer
-    <br>
-    c. answer
-    <br>
-    d. answer
-</p>
-<br>
-<br>
-<b>4. Question
-</b>
-<p> a. answer
-    <br>
-    b. answer
-    <br>
-    c. answer
-    <br>
-    d. answer
-</p>
-
-    </div>
-
-
+        <h2>UserID Storage</h2>
+        
+        <button onclick="myFunction()">Input ID</button>
+        
+        <script>
+        var userID = document.getElementById("ID");
+        function myFunction() {
+          prompt("ID", userID);
+        }
+        </script>
+        
+        </body>
+      </body>
+      </html>
