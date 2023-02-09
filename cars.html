@@ -1,35 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta name="viewport" content="with=device-width", initial-scale="1.0">
-    <!--helps make the website responsive-->
-    <title>CARS</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&family=Rubik+Bubbles&display=swap" rel="stylesheet">
-</head>
-<body>
-    <section class="header">
-        <nav>
-            <a href="index.html"><img src="images/logo.png"></a>
-            <div class="nav-links">
-                <ul>
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="about.html">ABOUT</a></li>
-                    <li><a href="inventory.html">INVENTORY</a></li>
-                    <li><a href="Quiz.html">QUIZ</a></li>
-                    <li><a href="profile.html">PROFILE</a></li>
-                    </ul>
-                    <script>
-                    var loader = document.getElementById("preloader");
-                    window.addEventListener("load", function(){
-                        loader.style.display = "none";
-                    })
-                </script>
-            </div>
-        </nav>
-      <!-- Begin Page Content-->
+
 
    <h3>JavaScript-Cars</h3>
 
@@ -50,7 +21,7 @@
         // prepare HTML result container for new output
         const resultContainer = document.getElementById("result");
 
-        const url = "http://127.0.0.1:8092/api/cars/";
+        const url = "http://localhost:8055/api/cars";
       
         // TODO!!
         // Is no-cors causing the bad return? How to add Access-Control to server if we need core
