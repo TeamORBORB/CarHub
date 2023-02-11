@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <link rel="stylesheet" href="style.css">
+  <!-- <link rel="stylesheet" href="style.css"> -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&family=Rubik+Bubbles&display=swap" rel="stylesheet">
@@ -17,34 +17,41 @@
                   <li><a href="Quiz.html">QUIZ</a></li>
                   <li><a href="profile.html">PROFILE</a></li>
                   </ul>
-                  <script>
+                  <!-- <script>
                   var loader = document.getElementById("preloader");
                   window.addEventListener("load", function(){
                       loader.style.display = "none";
                   })
-              </script>
+              </script> -->
           </div>
       </nav>
   
    <h1>JavaScript-Cars</h1>
-      <table>
+      <table id="table">
         <thead>
         <tr>
             <th>Make</th>
             <th>Model</th>
             <th>Year</th>
             <th>Price</th>
-            <th>Likes</th>
+            <!-- <th>Likes</th> -->
         </tr>
         </thead>
-        <tbody id="result">
-         </tbody>
+        <tr id="result"></tr>
+        <tbody id="carData"></tbody>
       </table>
-       
+          <label for="make">Make</label>
+          <input name="make" id="make">
+          <label for="model">Model</label>
+          <input name="model" id="model">
+          <label for="year">Year</label>
+          <input name="year" id="year">
+          <label for="price">Price</label>
+          <input name="price" id="price">
+          <button onclick="makeTable(carData)">Search</button>
        <script>
         // prepare HTML result container for new output
         const resultContainer = document.getElementById("result");
-
         const url = "https://cars.nighthawkcodingsociety.com/api/cars/";
       
         // TODO!!
@@ -63,7 +70,8 @@
         // TODO!!
         // Getting a connection refused error
 
-        
+        carData = null;
+
         // Fetch the database
         fetch(url, headers)
           .then(response => {
@@ -93,34 +101,9 @@
             response.json().then(data => {
                 console.log({data})
                 // adding a new row for each car from each json node     
-                for (const row of data) {
-
-                  const tr = document.createElement("tr");
-                  const make = document.createElement("td");
-                  const model = document.createElement("td");
-                  const year = document.createElement("td");
-                  const price = document.createElement("td");
-
-                  make.innerHTML = row.make;
-                  model.innerHTML = row.model; 
-                  year.innerHTML = row.year; 
-                  price.innerHTML = row.price; 
-                  price.innerHTML = row.price; 
-                  
-                  tr.appendChild(make);
-                  tr.appendChild(model);
-                  tr.appendChild(year);
-                  tr.appendChild(price);
-                  
-                  // if (likes == 1) {
-                  //   const likes = document.createElement("td");
-                  //   tr.appendChild(likes);
-                  //   return;
-                  // } else {
-                  //   console.log("Car not favorited")
-                  // }
-                  resultContainer.appendChild(tr);
-                }
+                carData=data
+                console.log(carData)
+                makeTable(carData)
             })
         })
         .catch(err => {
@@ -131,6 +114,74 @@
           tr.appendChild(td);
           resultContainer.appendChild(tr);
         }); 
+        function makeTable(data){
+          document.getElementById("carData").remove()
+          const [desiredMake, desiredModel, desiredPrice, desiredYear] = getInput()
+          const tbody = document.createElement("tbody")
+          tbody.id = "carData"
+          for (const row of data) {
+            
+            // If desiredMake, Model,... is input, check if make of row is equal to the desired...
+            // skip row creation if row exists
+            if (desiredMake && !(row.make === desiredMake))
+              continue
+            if (desiredModel && !(row.model === desiredModel))
+              continue
+            if (desiredPrice && !(row.price <= parseInt(desiredPrice)))
+              continue
+            if (desiredYear && !(row.year === parseInt(desiredYear)))
+              continue            
+
+
+            const tr = document.createElement("tr");
+            const make = document.createElement("td");
+            const model = document.createElement("td");
+            const year = document.createElement("td");
+            const price = document.createElement("td");
+
+            make.innerHTML = row.make;
+            model.innerHTML = row.model; 
+            year.innerHTML = row.year; 
+            price.innerHTML = row.price; 
+
+            tr.appendChild(make);
+            tr.appendChild(model);
+            tr.appendChild(year);
+            tr.appendChild(price);
+
+            // if (likes == 1) {
+            //   const likes = document.createElement("td");
+            //   tr.appendChild(likes);
+            //   return;
+            // } else {
+            //   console.log("Car not favorited")
+            // }
+            tbody.appendChild(tr);
+          }
+          document.getElementById("table").appendChild(tbody)
+        }
+        // Get input from form and return value
+        function getInput(){
+          let make = document.getElementById("make").value
+          let model = document.getElementById("model").value
+          let price = document.getElementById("price").value
+          let year = document.getElementById("year").value
+
+          if (make === "")
+            make = null
+          
+          if (model === "")
+            model = null
+          
+          if (price === "")
+            price = null
+          
+          if (year === "")
+            year = null
+          
+          return [make, model, price, year]
+        }
+
       </script>
 
 </body>
