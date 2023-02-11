@@ -1,9 +1,32 @@
 <!DOCTYPE html>
 <html>
-
-
-   <h3>JavaScript-Cars</h3>
-
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&family=Rubik+Bubbles&display=swap" rel="stylesheet">
+</head>
+<body>
+  <section class="header">
+      <nav>
+          <a href="index.html"><img src="images/logo.png"></a>
+          <div class="nav-links">
+              <ul>
+                  <li><a href="index.html">HOME</a></li>
+                  <li><a href="about.html">ABOUT</a></li>
+                  <li><a href="inventory.html">INVENTORY</a></li>
+                  <li><a href="Quiz.html">QUIZ</a></li>
+                  <li><a href="profile.html">PROFILE</a></li>
+                  </ul>
+                  <script>
+                  var loader = document.getElementById("preloader");
+                  window.addEventListener("load", function(){
+                      loader.style.display = "none";
+                  })
+              </script>
+          </div>
+      </nav>
+  
+   <h1>JavaScript-Cars</h1>
       <table>
         <thead>
         <tr>
@@ -11,6 +34,7 @@
             <th>Model</th>
             <th>Year</th>
             <th>Price</th>
+            <th>Likes</th>
         </tr>
         </thead>
         <tbody id="result">
@@ -21,22 +45,21 @@
         // prepare HTML result container for new output
         const resultContainer = document.getElementById("result");
 
-        const url = "http://localhost:8055/api/cars";
+        const url = "http://cars.nighthawkcodingsociety.com/api/cars/";
       
         // TODO!!
         // Is no-cors causing the bad return? How to add Access-Control to server if we need core
         const headers = {
           method: 'GET',
-          mode: 'no-cors',
           cache: 'default',
+          mode: 'cors',
           credentials: 'omit', 
           headers: {
             'Content-Type': 'application/json',
-            //'Access-Control-Allow-Origin' : '*', 
-            //'Access-Control-Allow-Credentials' : true
+            'Access-Control-Allow-Origin' : '*', 
+            'Access-Control-Allow-Credentials' : true
           },
         };
-
         // TODO!!
         // Getting a connection refused error
 
@@ -44,6 +67,8 @@
         // Fetch the database
         fetch(url, headers)
           .then(response => {
+            // const json = response.json()
+            // console.log({response, json})
             console.log("result of fetch " + response.status + " " + response.statusText);
             
             if (response.status != 200) {
@@ -58,6 +83,7 @@
                 return;
             }
 
+            // Debug, check if there is any response
             if( response == null) {
               console.log("response is null!");
               return;
@@ -65,31 +91,34 @@
 
             // Parse the json and add it to the webpage
             response.json().then(data => {
-                console.log("running response.json");
-
-                if (!(response.data && response.data.success)) {
-                  throw new Error('Bad response from server.');
-                }
-
+                console.log({data})
                 // adding a new row for each car from each json node     
                 for (const row of data) {
-      
+
                   const tr = document.createElement("tr");
                   const make = document.createElement("td");
                   const model = document.createElement("td");
                   const year = document.createElement("td");
                   const price = document.createElement("td");
-      
+
                   make.innerHTML = row.make;
                   model.innerHTML = row.model; 
                   year.innerHTML = row.year; 
                   price.innerHTML = row.price; 
-      
+                  price.innerHTML = row.price; 
+                  
                   tr.appendChild(make);
                   tr.appendChild(model);
                   tr.appendChild(year);
                   tr.appendChild(price);
-      
+                  
+                  // if (likes == 1) {
+                  //   const likes = document.createElement("td");
+                  //   tr.appendChild(likes);
+                  //   return;
+                  // } else {
+                  //   console.log("Car not favorited")
+                  // }
                   resultContainer.appendChild(tr);
                 }
             })

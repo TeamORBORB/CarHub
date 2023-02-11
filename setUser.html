@@ -4,14 +4,15 @@
 
 <h2>UserID Storage</h2>
 
+<!-- Prompt asks for an ID, then sets the ID -->
 <script>
 function setID() {
   var userID = prompt("ID", userID);
   localStorage.setItem("userID", userID);
 }
-
 var storedID = localStorage.getItem("userID");
 </script>
+<!-- The storedID variable retrieves the userID -->
 
 <button onclick="setID()">Input ID</button>
 
