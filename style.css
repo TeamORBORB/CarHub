@@ -320,10 +320,11 @@
  }
 
  .headerlexusRCF{
-   min-height: 100vh;
+    height: 100vh;
     width: 100%;
     /*the gif adds to the moving banner on the website*/
     background-image: url(https://user-images.githubusercontent.com/111478625/215028710-ca85fe3a-599f-49b1-bc62-f623d2f88c40.png);
+    margin-bottom: 50em;
     background-position: center;
     background-size: cover;
     position: relative;
@@ -391,7 +392,6 @@
     font-size: 14px;
     color: rgb(255, 255, 255);
  }
- 
  
  /*the inventory btn aka the 'Find Your Dream Car Today!' btn/box*/
  .inv-btn{

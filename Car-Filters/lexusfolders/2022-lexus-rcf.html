@@ -4,7 +4,7 @@
     <meta name="viewport" content="with=device-width", initial-scale="1.0">
     <!--helps make the website responsive-->
     <title>CARS</title>
-    <link rel="stylesheet" href="../../../style.css">
+    <link rel="stylesheet" href="https://github.com/TeamORBORB/CarHubDemos/blob/39b365af5146d0b9e42e2fe3aa8af849611fd0b9/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&family=Rubik+Bubbles&display=swap" rel="stylesheet">
@@ -36,7 +36,73 @@
         <p>Starting at $67,845</p>
         <!--button to next link-->
         <a href="inventory.html" class="inv-btn">Explore the Lexus RC F</a>
+</div>
+
+<div class="container">
+  <img class="lexusrcf" src="https://user-images.githubusercontent.com/111478625/217332531-704371c8-6b61-4f32-b2a3-14beb20c1087.png" alt="2022-lexus-rcf">
+  <div class="information-text">
+    <p>Pricing</p>
+    <h3>Affordable Luxury</h3>
+    <h3 class="script"><script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> hello there</h3>
+    </div>
+</div>
 
 
+<style>
+
+.container {
+  margin-top: 700px;
+  display: flex;
+  flex-direction: row;
+}
+
+.information-text {
+  padding: 10px;
+}
+
+.container .lexusrcf{
+    float:left;
+    position: relative;
+    margin-left: 30px;
+} 
+
+</style>
+
+<!-- <script>
+
+const axios = require("axios");
+
+const options = {
+  method: 'GET',
+  url: 'https://api.edmunds.com/api/vehicle/v2/lexus/rcf/2022',
+  params: {
+    fmt: 'json',
+    api_key: 'b4fb6918dfmsh4040a7ea004e390p12c87ajsn6468fcf96ab9'
+  }
+};
+
+axios.request(options).then(function (response) {
+  console.log(`The Pricing of the 2022 Lexus RCF is: ${response.data.engine.type}.`);
+}).catch(function (error) {
+  console.error(error);
+});
 
 
+/* this script here allows me to pull from edmunds car API and pull the pricing of each car.*/
+
+  <script>
+    $(document).ready(function() {
+      var API_KEY = "b4fb6918dfmsh4040a7ea004e390p12c87ajsn6468fcf96ab9";
+      var carMake = "Lexus";
+      var carModel = "RC-F";
+
+      $.ajax({
+        url: "https://api.edmunds.com/api/vehicle/v2/" + carMake + "/" + carModel + "/2022?state=new&view=basic&fmt=json&api_key=" + API_KEY,
+        success: function(result) {
+          $("#price").html("Starting price: $" + result.price.baseMSRP);
+        }
+      });
+    });
+  </script>
+
+</script> -->
