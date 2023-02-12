@@ -421,15 +421,14 @@
     }
  }
  #preloader{
-    background: rgb(77, 66, 68);
-    background-size: 10%;
-    height: 100vh;
-    min-width: 1000.00;
-    min-height: 1000.00;
-    top: -30px;
-    width: 100%;
-    position: fixed;
- }
+   background: rgb(77, 66, 68) url("https://giphy.com/gifs/corgi-lazy-hk-vbeNMLuswd7RR25lah") no-repeat center center;
+   background-size: cover;
+   height: 100vh;
+   width: 100vw;
+   top: 0;
+   left: 0;
+   position: fixed;
+}
  /*---CARS---*/
  /*different car brands and descriptions*/
  .cars{
@@ -661,14 +660,14 @@
  
  
  label{
-    height: 100%;
+    /* height: 100%;
     position: absolute;
     left: 0;
-    top:0;
+    top:0; */
     padding: 10px;
     color: #fff;
-    cursor: text;
-    transition: 0.2s;
+    /* cursor: text; */
+    /* transition: 0.2s; */
  }
  
  

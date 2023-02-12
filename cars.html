@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <!-- <link rel="stylesheet" href="style.css"> -->
+  <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&family=Rubik+Bubbles&display=swap" rel="stylesheet">
@@ -17,16 +17,16 @@
                   <li><a href="Quiz.html">QUIZ</a></li>
                   <li><a href="profile.html">PROFILE</a></li>
                   </ul>
-                  <!-- <script>
+                <script>
                   var loader = document.getElementById("preloader");
                   window.addEventListener("load", function(){
                       loader.style.display = "none";
                   })
-              </script> -->
+              </script> 
           </div>
       </nav>
   
-   <h1>JavaScript-Cars</h1>
+   <h1>Car Search</h1>
       <table id="table">
         <thead>
         <tr>
@@ -63,8 +63,6 @@
           credentials: 'omit', 
           headers: {
             'Content-Type': 'application/json',
-            // 'Access-Control-Allow-Origin' : '*', 
-            // 'Access-Control-Allow-Credentials' : true
           },
         };
         // TODO!!
@@ -90,17 +88,15 @@
                 resultContainer.appendChild(tr);
                 return;
             }
-
             // Debug, check if there is any response
             if( response == null) {
               console.log("response is null!");
               return;
             }
-
             // Parse the json and add it to the webpage
             response.json().then(data => {
                 console.log({data})
-                // adding a new row for each car from each json node     
+                // Adding a new row for each car from each json node     
                 carData=data
                 console.log(carData)
                 makeTable(carData)
@@ -119,11 +115,12 @@
           const [desiredMake, desiredModel, desiredPrice, desiredYear] = getInput()
           const tbody = document.createElement("tbody")
           tbody.id = "carData"
+          // Iterate over each row in the data array
           for (const row of data) {
             
-            // If desiredMake, Model,... is input, check if make of row is equal to the desired...
-            // skip row creation if row exists
-            if (desiredMake && !(row.make === desiredMake))
+            // Filter
+            // Check if each value matches the input, skip to the next iteration if there is no match
+            if (desiredMake && !(row.make.toUpperCase() === desiredMake.toUpperCase()))
               continue
             if (desiredModel && !(row.model === desiredModel))
               continue
@@ -132,7 +129,7 @@
             if (desiredYear && !(row.year === parseInt(desiredYear)))
               continue            
 
-
+            // If all values match, create table elements
             const tr = document.createElement("tr");
             const make = document.createElement("td");
             const model = document.createElement("td");
@@ -149,13 +146,6 @@
             tr.appendChild(year);
             tr.appendChild(price);
 
-            // if (likes == 1) {
-            //   const likes = document.createElement("td");
-            //   tr.appendChild(likes);
-            //   return;
-            // } else {
-            //   console.log("Car not favorited")
-            // }
             tbody.appendChild(tr);
           }
           document.getElementById("table").appendChild(tbody)
@@ -184,5 +174,47 @@
 
       </script>
 
+<style>
+*{
+box-sizing: border-box;
+}
+#preloader{
+   background: rgb(126, 217, 200) url("https://giphy.com/gifs/corgi-lazy-hk-vbeNMLuswd7RR25lah") no-repeat center center;
+   background-size: cover;
+   height: 100vh;
+   width: 100vw;
+   top: 0;
+   left: 0;
+   position: fixed;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th {
+  background-color: #ddd;
+  text-align: left;
+  padding: 8px;
+  font-weight: bold;
+}
+
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+h1 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+</style>
 </body>
 </html>
