@@ -59,7 +59,11 @@
             <h1>Subscribe Today! For Free!</h1>
             <p>Stay informed about new car models and releases! Learn more about the latest industry trends and developments! And get early access to new information about cars!</p>
             <form>
-                <input type="email" name="Email" placeholder="abc@example.com" required>
+                <form action="javascript:create_user()">
+                    <p><label>
+                        User ID:
+                        <input type="text" name="uid" id="uid" placeholder="abc@example.com" required>
+                    </label></p>
                 <button type="submit"><img src="" width="30px"></button>
                 <!-- Image was not working put iamge into an issue to make a github link -->
             </form>
@@ -80,16 +84,12 @@
 </body>
 
 <section class="database">
-<p>Database API</p>
+<p>Join Our Subscriber List</p>
 
 <table>
   <thead>
   <tr>
     <th>User ID</th>
-    <th>Name</th>
-    <th>Posts</th>
-    <th>DOB</th>
-    <th>Age</th>
   </tr>
   </thead>
   <tbody id="result">
@@ -98,30 +98,6 @@
 </table>
 
 <p>Create API</p>
-
-<form action="javascript:create_user()">
-    <p><label>
-        User ID:
-        <input type="text" name="uid" id="uid" required>
-    </label></p>
-    <p><label>
-        Name:
-        <input type="text" name="name" id="name" required>
-    </label></p>
-    <p><label>
-        Password:
-        <input type="password" name="password" id="password" required>
-        Verify Password:
-        <input type="password" name="passwordV" id="passwordV" required>
-    </label></p>
-    <p><label>
-        Birthday:
-        <input type="date" name="dob" id="dob">
-    </label></p>
-    <p>
-        <button>Create</button>
-    </p>
-</form>
 
 <script>
   // prepare HTML result container for new output
