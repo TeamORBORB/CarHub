@@ -25,7 +25,7 @@
             </div>
         </nav>
     <div class = "sub-header">
-        <h1 style="text-align: center; color: aliceblue;">About Us</h1>
+        <h1 style="text-align: center; color: rgb(114, 142, 167);">About Us</h1>
     </div>
     <div class = "sub-header h1">
         <p> Welcome to our car page!
@@ -50,16 +50,13 @@
                 <form action="javascript:create_user()">
                     <p><label>
                         User ID:
-                        <input type="text" name="uid" id="uid" placeholder="abc@example.com" required>
+                        <input class="textarea" type="text" name="uid" id="uid" placeholder="abc@example.com" required>
                     </label></p>
-                <button type="submit"><img src="" width="30px"></button>
+                <button type="submit"><img src="" width="10px"></button>
                 <!-- Image was not working put iamge into an issue to make a github link -->
             </form>
             <span>Thanks For Subscribing!</span>
         </div>
-        <div class="about-col">
-        <img src="images/about.png">
-    </div>
     </div>
         <div id ="preloader"></div>
         <script>
@@ -71,13 +68,13 @@
 </section>
 </body>
 
-<section class="database">
-<p>Join Our Subscriber List</p>
+<section class="about-col">
+<h1>Join Our Subscriber List</h1>
 
 <table>
   <thead>
   <tr>
-    <th>User ID</th>
+    <th><!--header-->></th>
   </tr>
   </thead>
   <tbody id="result">
@@ -85,20 +82,24 @@
   </tbody>
 </table>
 
-<p>Create API</p>
+<p><!--Create API--></p>
 
+<form action="javascript:create_user()">
+    <p><label>
+        Email:
+        <input type="text" name="uid" id="uid" required>
+    </label></p>
+</form>
 <script>
   // prepare HTML result container for new output
   const resultContainer = document.getElementById("result");
   // prepare URL's to allow easy switch from deployment and localhost
   //const url = "http://localhost:8086/api/users"
-  const url = "https://flask.nighthawkcodingsociety.com/api/users"
   const create_fetch = url + '/create';
   const read_fetch = url + '/';
 
   // Load users on page entry
   read_users();
-
 
   // Display User Table, data is fetched from Backend Database
   function read_users() {
@@ -218,3 +219,4 @@
 
 </script>
 </section>
+

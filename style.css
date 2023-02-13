@@ -497,11 +497,16 @@
     width: 80%;
     padding-top: 80px;
     padding-bottom: 50px;
+    color: #808896;
  }
 
 .about-col{
    flex-basis: 48%;
-   padding: 30px 2px;
+   padding: 30px 50px;
+   color: #979797;
+   background-image: linear-gradient(rgba(147, 149, 158, 0.7),rgba(147, 149, 158, 0.7));
+   background-position: center;
+   background-size: cover;
 }
 .about-col img{
    width: 100%;
