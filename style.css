@@ -497,11 +497,16 @@
     width: 80%;
     padding-top: 80px;
     padding-bottom: 50px;
+    color: #808896;
  }
 
 .about-col{
    flex-basis: 48%;
-   padding: 30px 2px;
+   padding: 30px 50px;
+   color: #979797;
+   background-image: linear-gradient(rgba(147, 149, 158, 0.7),rgba(147, 149, 158, 0.7));
+   background-position: center;
+   background-size: cover;
 }
 .about-col img{
    width: 100%;
@@ -536,12 +541,14 @@
  
  /*----MAIL BAR---*/
  
- form{
+
+
+ .form{
     background: #fff;
     display: flex;
     width: fit-content;
  }
- form input{
+ .form input{
     border: 0;
     outline: none;
     padding: 10px 20px;
@@ -549,7 +556,7 @@
     width: 400px;
     font-size: 16px;
  }
- form button{
+ .form button{
     background: #eb7f41;
     border: none;
     outline: none;
@@ -558,7 +565,7 @@
     cursor: pointer;
  }
  
- span{
+ .span{
     color:rgb(255, 162, 57);
     margin-top: 10px;
     display: block;
