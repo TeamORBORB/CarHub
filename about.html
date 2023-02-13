@@ -184,26 +184,12 @@
   function add_row(data) {
     const tr = document.createElement("tr");
     const uid = document.createElement("td");
-    const name = document.createElement("td");
-    const posts = document.createElement("td")
-    const dob = document.createElement("td");
-    const age = document.createElement("td");
-  
-
+ 
     // obtain data that is specific to the API
     uid.innerHTML = data.uid; 
-    name.innerHTML = data.name; 
-    posts.innerHTML = data.posts.length;
-    dob.innerHTML = data.dob; 
-    age.innerHTML = data.age; 
 
     // add HTML to container
     tr.appendChild(uid);
-    tr.appendChild(name);
-    tr.appendChild(posts);
-    tr.appendChild(dob);
-    tr.appendChild(age);
-
     resultContainer.appendChild(tr);
   }
 
