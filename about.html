@@ -49,10 +49,9 @@
             <form>
                 <form action="javascript:create_user()">
                     <p><label>
-                        User ID:
                         <input class="textarea" type="text" name="uid" id="uid" placeholder="abc@example.com" required>
                     </label></p>
-                <button type="submit"><img src="" width="10px"></button>
+                <button type="submit" width="40px"></button>
                 <!-- Image was not working put iamge into an issue to make a github link -->
             </form>
             <span>Thanks For Subscribing!</span>
@@ -84,12 +83,6 @@
 
 <p><!--Create API--></p>
 
-<form action="javascript:create_user()">
-    <p><label>
-        Email:
-        <input type="text" name="uid" id="uid" required>
-    </label></p>
-</form>
 <script>
   // prepare HTML result container for new output
   const resultContainer = document.getElementById("result");
@@ -153,10 +146,7 @@
     //Validate Password (must be 6-20 characters in len)
     //verifyPassword("click");
     const body = {
-        uid: document.getElementById("uid").value,
-        name: document.getElementById("name").value,
-        password: document.getElementById("password").value,
-        dob: document.getElementById("dob").value
+        uid: document.getElementById("uid").value
     };
     const requestOptions = {
         method: 'POST',
