@@ -4,7 +4,7 @@
     <meta name="viewport" content="with=device-width", initial-scale="1.0">
     <!--helps make the website responsive-->
     <title>CARS</title>
-    <link rel="stylesheet" href="https://github.com/TeamORBORB/CarHubDemos/blob/39b365af5146d0b9e42e2fe3aa8af849611fd0b9/style.css">
+    <link rel="stylesheet" href="../../style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&family=Rubik+Bubbles&display=swap" rel="stylesheet">
@@ -47,6 +47,71 @@
     </div>
 </div>
 
+<container class="Commentssection">
+<html>
+  <head>
+    <title>User Comments</title>
+  </head>
+  <body>
+    <h1>User Comments</h1>
+    <div id="comments">
+      <!-- comments will be displayed here -->
+    </div>
+    <h2>Add a Comment</h2>
+    <form id="comment-form">
+      <label>
+        Name:
+        <input type="text" id="username" required>
+      </label>
+      <br><br>
+      <label>
+        Comment:
+        <textarea id="comment" required></textarea>
+      </label>
+      <br><br>
+      <button type="submit">Submit</button>
+    </form>
+
+    <script>
+      const commentsDiv = document.querySelector('#comments');
+      const form = document.querySelector('#comment-form');
+
+// Fetch comments and display them
+async function fetchAndDisplayComments() {
+  const response = await fetch('http://localhost:8055/comments');
+  const comments = await response.json();
+  commentsDiv.innerHTML = '';
+  comments.forEach(comment => {
+    commentsDiv.innerHTML += `
+      <p><strong>${comment.username}</strong> said: ${comment.comment}</p>
+    `;
+  });
+}
+
+// Handle form submissions
+form.addEventListener('submit', async event => {
+  event.preventDefault();
+  const username = document.querySelector('#username').value;
+  const comment = document.querySelector('#comment').value;
+  const response = await fetch('http://localhost:8055/comments', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ username, comment })
+  });
+  if (response.ok) {
+    fetchAndDisplayComments();
+  }
+});
+
+fetchAndDisplayComments();
+
+    </script>
+  </body>
+</html>
+</container>
+
 
 <style>
 
@@ -66,43 +131,52 @@
     margin-left: 30px;
 } 
 
+.Commentssection {
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      #comments {
+        background-color: lightgray;
+        padding: 10px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+
+      #comment-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: lightgray;
+        padding: 20px;
+        border-radius: 10px;
+        margin-left: 200px;
+      }
+
+      input, textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        border: 1px solid gray;
+      }
+
+      button {
+        width: 20%;
+        padding: 10px;
+        background-color: lightblue;
+        color: white;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+      }
+
+      p {
+        margin: 10px;
+      }
+
+
+
 </style>
 
-<!-- <script>
-
-const axios = require("axios");
-
-const options = {
-  method: 'GET',
-  url: 'https://api.edmunds.com/api/vehicle/v2/lexus/rcf/2022',
-  params: {
-    fmt: 'json',
-    api_key: 'b4fb6918dfmsh4040a7ea004e390p12c87ajsn6468fcf96ab9'
-  }
-};
-
-axios.request(options).then(function (response) {
-  console.log(`The Pricing of the 2022 Lexus RCF is: ${response.data.engine.type}.`);
-}).catch(function (error) {
-  console.error(error);
-});
-
-
-/* this script here allows me to pull from edmunds car API and pull the pricing of each car.*/
-
-  <script>
-    $(document).ready(function() {
-      var API_KEY = "b4fb6918dfmsh4040a7ea004e390p12c87ajsn6468fcf96ab9";
-      var carMake = "Lexus";
-      var carModel = "RC-F";
-
-      $.ajax({
-        url: "https://api.edmunds.com/api/vehicle/v2/" + carMake + "/" + carModel + "/2022?state=new&view=basic&fmt=json&api_key=" + API_KEY,
-        success: function(result) {
-          $("#price").html("Starting price: $" + result.price.baseMSRP);
-        }
-      });
-    });
-  </script>
-
-</script> -->
