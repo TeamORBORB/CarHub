@@ -29,6 +29,7 @@
    <h1>Car Search</h1>
       <table id="table">
         <thead>
+
         <tr>
             <th>Make</th>
             <th>Model</th>
@@ -49,6 +50,7 @@
           <label for="price">Price</label>
           <input name="price" id="price">
           <button onclick="makeTable(carData)">Search</button>
+          <button onclick="clearTable(carData)">Clear</button>
        <script>
         // prepare HTML result container for new output
         const resultContainer = document.getElementById("result");
@@ -93,7 +95,7 @@
                 // Set carData to the data from the database     
                 carData=data
                 console.log(carData)
-                makeTable(carData)
+                //makeTable(carData)
             })
         })
           // Checking for errors, more debugging
@@ -105,6 +107,7 @@
           tr.appendChild(td);
           resultContainer.appendChild(tr);
         }); 
+        // Table creation after search button is pressed
         function makeTable(data){
           document.getElementById("carData").remove()
           const [desiredMake, desiredModel, desiredPrice, desiredYear] = getInput()
@@ -117,7 +120,7 @@
             // Check if each row value matches user input, skip to the next iteration if there is no match
             if (desiredMake && !(row.make.toUpperCase() === desiredMake.toUpperCase()))
               continue
-            if (desiredModel && !(row.model === desiredModel))
+            if (desiredModel && !(row.model.toUpperCase() === desiredModel.toUpperCase()))
               continue
             if (desiredPrice && !(row.price <= parseInt(desiredPrice)))
               continue
@@ -152,19 +155,23 @@
           let price = document.getElementById("price").value
           let year = document.getElementById("year").value
 
-          if (make === "")
+          if (make === null)
             make = null
           
-          if (model === "")
+          if (model === null)
             model = null
           
-          if (price === "")
+          if (price === null)
             price = null
           
-          if (year === "")
+          if (year === null)
             year = null
           
           return [make, model, price, year]
+        }
+        // Clear table
+        function clearTable(){
+          carData=null
         }
 
       </script>
