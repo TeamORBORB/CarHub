@@ -1,0 +1,67 @@
+<!--temporary file-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        // Get the user's current location using the Geolocation API
+        navigator.geolocation.getCurrentPosition(function(position) {
+          var userLat = position.coords.latitude;
+          var userLng = position.coords.longitude;
+
+          // fetch the dealerships
+          $.get("get_dealerships.php", function(data) {
+            var dealerships = JSON.parse(data);
+
+            //Haversine formula for distance between dealerships
+            var closestDealership = null;
+            var closestDistance = Number.MAX_VALUE;
+            dealerships.forEach(function(dealership) {
+              var dealershipLat = dealership.latitude;
+              var dealershipLng = dealership.longitude;
+              var distance = calculateDistance(userLat, userLng, dealershipLat, dealershipLng);
+              if (distance < closestDistance) {
+                closestDealership = dealership;
+                closestDistance = distance;
+              }
+            });
+
+            //the information about the closest dealership
+            $("#dealership-name").text(closestDealership.name);
+            $("#dealership-address").text(closestDealership.address);
+            $("#distance").text(closestDistance + " km");
+          });
+        });
+
+        //haversine formula from the user
+        function calculateDistance(lat1, lng1, lat2, lng2) {
+          var earthRadius = 6371; // km
+          var dLat = (lat2 - lat1) * (Math.PI / 180);
+          var dLng = (lng2 - lng1) * (Math.PI / 180);
+          var a =
+            Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+            Math.cos(lat1 * (Math.PI / 180)) *
+              Math.cos(lat2 * (Math.PI / 180)) *
+              Math.sin(dLng / 2) *
+              Math.sin(dLng / 2);
+          var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+          var distance = earthRadius * c;
+          return distance;
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Nearest Dealership Finder</h1>
+    <p>
+      The nearest dealership to your location is:<br />
+      <strong>
+        <span id="dealership-name"></span>
+      </strong>
+      <br />
+      <span id="dealership-address"></span>
+      <br />
+      Distance: <span id="distance"></span>
+    </p>
+ 
