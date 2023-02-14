@@ -35,6 +35,8 @@
             <th>Model</th>
             <th>Year</th>
             <th>Price</th>
+            <th>Engine</th>
+            <th>Body Style</th>
             <!-- <th>Likes</th> -->
         </tr>
         </thead>
@@ -49,6 +51,10 @@
           <input name="year" id="year">
           <label for="price">Price</label>
           <input name="price" id="price">
+          <label for="engine">Engine</label>
+          <input name="engine" id="engine">
+          <label for="body_style">Body Style</label>
+          <input name="body_style" id="body_style">
           <button onclick="makeTable(carData)" style="background-color: #ffff; color: black;">Search</button>
           <button onclick="clearTable(carData)" style="background-color: #f2f2f2; color: black">Clear</button>
        <script>
@@ -95,7 +101,6 @@
                 // Set carData to the data from the database     
                 carData=data
                 console.log(carData)
-                //makeTable(carData)
             })
         })
           // Checking for errors, more debugging
@@ -111,7 +116,7 @@
         function makeTable(data){
           // Remove current carData - prepare for new search
           document.getElementById("carData").remove()
-          const [desiredMake, desiredModel, desiredPrice, desiredYear] = getInput()
+          const [desiredMake, desiredModel, desiredPrice, desiredYear, desiredEngine, desiredBodyStyle] = getInput()
           const tbody = document.createElement("tbody")
           tbody.id = "carData"
           // Iterate over each row from the data in the database
@@ -126,7 +131,11 @@
             if (desiredPrice && !(row.price <= parseInt(desiredPrice)))
               continue
             if (desiredYear && !(row.year === parseInt(desiredYear)))
-              continue            
+              continue          
+            if (desiredEngine && !(row.engine.toUpperCase() === desiredEngine.toUpperCase()))
+              continue
+            if (desiredBodyStyle && !(row.body_style.toUpperCase() === desiredBodyStyle.toUpperCase()))
+              continue         
 
             // If all values match, create table elements
             const tr = document.createElement("tr");
@@ -134,16 +143,22 @@
             const model = document.createElement("td");
             const year = document.createElement("td");
             const price = document.createElement("td");
+            const engine = document.createElement("td");
+            const body_style = document.createElement("td");
 
             make.innerHTML = row.make;
             model.innerHTML = row.model; 
             year.innerHTML = row.year; 
             price.innerHTML = row.price; 
+            engine.innerHTML = row.engine; 
+            body_style.innerHTML = row.body_style; 
 
             tr.appendChild(make);
             tr.appendChild(model);
             tr.appendChild(year);
             tr.appendChild(price);
+            tr.appendChild(engine);
+            tr.appendChild(body_style);
 
             tbody.appendChild(tr);
           }
@@ -156,6 +171,8 @@
           let model = document.getElementById("model").value
           let price = document.getElementById("price").value
           let year = document.getElementById("year").value
+          let engine = document.getElementById("engine").value
+          let body_style = document.getElementById("body_style").value
 
           if (make === null)
             make = null
@@ -168,8 +185,14 @@
           
           if (year === null)
             year = null
+
+          if (engine === null)
+            engine = null
           
-          return [make, model, price, year]
+          if (body_style === null)
+            body_style = null
+          
+          return [make, model, price, year, engine, body_style]
         }
         // Clear table
         function clearTable(){
