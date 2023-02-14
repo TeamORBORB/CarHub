@@ -50,7 +50,7 @@
           <label for="price">Price</label>
           <input name="price" id="price">
           <button onclick="makeTable(carData)" style="background-color: #ffff; color: black;">Search</button>
-          <button onclick="clearTable(carData)" style="background-color: #f2f2f2;">Clear</button>
+          <button onclick="clearTable(carData)" style="background-color: #f2f2f2; color: black">Clear</button>
        <script>
         // prepare HTML result container for new output
         const resultContainer = document.getElementById("result");
@@ -109,6 +109,7 @@
         }); 
         // Table creation after search button is pressed
         function makeTable(data){
+          // Remove current carData - prepare for new search
           document.getElementById("carData").remove()
           const [desiredMake, desiredModel, desiredPrice, desiredYear] = getInput()
           const tbody = document.createElement("tbody")
