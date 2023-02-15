@@ -94,6 +94,16 @@ async function fetchAndDisplayComments() {
 const form = document.querySelector('form');
 
 // Handle form submissions
+
+const headers = {
+          method: 'GET',
+          cache: 'default',
+          mode: 'cors',
+          credentials: 'omit', 
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          
 form.addEventListener('submit', async event => {
   event.preventDefault();
   const username = document.querySelector('#username').value;
