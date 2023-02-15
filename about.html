@@ -72,12 +72,8 @@
   
   <h1>Become a Subscriber by adding you Initials</h1>
 <input id="inputvalue" type="text" placeholder="First and Last Initial 'A.B'">
-<button>Submit</button>
+<button onclick="setID()">Submit </button>
 
-<u1>
-
-
-</u1>
 <!---JS-->
 <script>
   const btnE1 = document.querySelector('button');
@@ -92,6 +88,15 @@
 
 </body>
 </html>
+
+<script>
+  function setID() {
+    var userID = prompt("ID", userID);
+    localStorage.setItem("userID", userID);
+  }
+  var storedID = localStorage.getItem("userID");
+  </script>
+
 
   <!------------------------------>
 
