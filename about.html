@@ -31,8 +31,6 @@
         <p> Welcome to our car page!
         </p>
     </div>
-    
-
     <div class="bottom"></div>
 
 </section>
@@ -41,22 +39,63 @@
 <!--ab us-->
 <section class="about-us">
 
-    <div class="row">
 
-        <div class="about-col">
-            <h1>Subscribe Today! For Free!</h1>
-            <p>Stay informed about new car models and releases! Learn more about the latest industry trends and developments! And get early access to new information about cars! (Your First and Last Initial will be shown on the website, please be careful with the information you put onto our website. We are not reliable for your data leaks on our website.)</p>
-            <form>
-                <form action="javascript:create_user()">
-                    <p><label>
-                        <input class="textarea" type="text" name="uid" id="uid" placeholder="First and Last Initial 'A.B'" maxlength="3" required>
-                    </label></p>
-                <button type="submit" width="40px"></button>
-                <!-- Image was not working put iamge into an issue to make a github link -->
-            </form>
-            <span>Thanks For Subscribing!</span>
-        </div>
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <style>
+    body{
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+      background-color:rgb(158, 158, 171);
+    }
+
+    input{
+      height:30px;
+      width: 200px;
+      margin-bottom:15px;
+    }
+
+    ul{
+      font-size:30px;
+    }
+  </style>
+
+  <title>Welcome</title>
+</head>
+<body>
+  
+  <h1>Become a Subscriber by adding you Initials</h1>
+<input id="inputvalue" type="text" placeholder="First and Last Initial 'A.B'">
+<button>Submit</button>
+
+<u1>
+
+
+</u1>
+<!---JS-->
+<script>
+  const btnE1 = document.querySelector('button');
+  const inputE1 = document.querySelector('input');
+  const listE1 = document.querySelector('u1');
+
+  btnE1.addEventListener('click', () => {
+    const inputValue = inputE1.value;
+    listE1.insertAdjacentHTML('beforeend', '<li>inputValue</li>');
+  });
+</script>
+
+</body>
+</html>
+
+  <!------------------------------>
+
+<!-------------------------------->
         <div id ="preloader"></div>
         <script>
             var loader = document.getElementById("preloader");
@@ -66,134 +105,7 @@
      </script>
 </section>
 </body>
-
+<!-------------------------------->
 <section class="about-col">
 <h1>Join Our Subscriber List</h1>
-
-<table>
-  <thead>
-  <tr>
-    <th><!--header-->></th>
-  </tr>
-  </thead>
-  <tbody id="result">
-    <!-- javascript generated data -->
-  </tbody>
-</table>
-
-<p><!--Create API--></p>
-
-<script>
-  // prepare HTML result container for new output
-  const resultContainer = document.getElementById("result");
-  // prepare URL's to allow easy switch from deployment and localhost
-  //const url = "http://localhost:8086/api/users"
-  const url = "https://cars.nighthawkcodingsociety.com/"
-  const create_fetch = url + '/create';
-  const read_fetch = url + '/';
-
-  // Load users on page entry
-  read_users();
-
-  // Display User Table, data is fetched from Backend Database
-  function read_users() {
-    // prepare fetch options
-    const read_options = {
-      method: 'GET', // *GET, POST, PUT, DELETE, etc.
-      mode: 'cors', // no-cors, *cors, same-origin
-      cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
-      credentials: 'omit', // include, *same-origin, omit
-      headers: {
-        'Content-Type': 'application/json'
-      },
-    };
-
-    // fetch the data from API
-    fetch(read_fetch, read_options)
-      // response is a RESTful "promise" on any successful fetch
-      .then(response => {
-        // check for response errors
-        if (response.status !== 200) {
-            const errorMsg = 'Database read error: ' + response.status;
-            console.log(errorMsg);
-            const tr = document.createElement("tr");
-            const td = document.createElement("td");
-            td.innerHTML = errorMsg;
-            tr.appendChild(td);
-            resultContainer.appendChild(tr);
-            return;
-        }
-        // valid response will have json data
-        response.json().then(data => {
-            console.log(data);
-            for (let row in data) {
-              console.log(data[row]);
-              add_row(data[row]);
-            }
-        })
-    })
-    // catch fetch errors (ie ACCESS to server blocked)
-    .catch(err => {
-      console.error(err);
-      const tr = document.createElement("tr");
-      const td = document.createElement("td");
-      td.innerHTML = err;
-      tr.appendChild(td);
-      resultContainer.appendChild(tr);
-    });
-  }
-
-  function create_user(){
-    //Validate Password (must be 6-20 characters in len)
-    //verifyPassword("click");
-    const body = {
-        uid: document.getElementById("uid").value
-    };
-    const requestOptions = {
-        method: 'POST',
-        body: JSON.stringify(body),
-        headers: {
-            "content-type": "application/json",
-            'Authorization': 'Bearer my-token',
-        },
-    };
-
-    // URL for Create API
-    // Fetch API call to the database to create a new user
-    fetch(create_fetch, requestOptions)
-      .then(response => {
-        // trap error response from Web API
-        if (response.status !== 200) {
-          const errorMsg = 'Database create error: ' + response.status;
-          console.log(errorMsg);
-          const tr = document.createElement("tr");
-          const td = document.createElement("td");
-          td.innerHTML = errorMsg;
-          tr.appendChild(td);
-          resultContainer.appendChild(tr);
-          return;
-        }
-        // response contains valid result
-        response.json().then(data => {
-            console.log(data);
-            //add a table row for the new/created userid
-            add_row(data);
-        })
-    })
-  }
-
-  function add_row(data) {
-    const tr = document.createElement("tr");
-    const uid = document.createElement("td");
- 
-    // obtain data that is specific to the API
-    uid.innerHTML = data.uid; 
-
-    // add HTML to container
-    tr.appendChild(uid);
-    resultContainer.appendChild(tr);
-  }
-
-</script>
-</section>
 
