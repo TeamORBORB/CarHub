@@ -48,74 +48,74 @@
 </div>
 
 <container class="Commentssection">
-  <html>
-    <head>
-      <title>User Comments</title>
-    </head>
-    <body>
-      <h1>User Comments</h1>
-      <div id="comments">
-        <!-- comments will be displayed here -->
-      </div>
-      <h2>Add a Comment</h2>
-      <form id="comment-form">
-        <label>
-          Name:
-          <input type="text" id="username" required>
-        </label>
-        <br><br>
-        <label>
-          Comment:
-          <textarea id="comment" required></textarea>
-        </label>
-        <br><br>
-        <button type="submit">Submit</button>
-      </form>
-  
-  <script>
-  const commentsDiv = document.querySelector('#comments');
-  
-  // Fetch comments and display them
-  async function fetchAndDisplayComments() {
-    const response = await fetch('https://cars.nighthawkcodingsociety.com/comments');
-    const comments = await response.json();
-    commentsDiv.innerHTML = '';
-    comments.forEach(comment => {
-      commentsDiv.innerHTML += `
-        <p><strong>${comment.username}</strong> said: ${comment.comment}</p>
-      `;
-    });
-  }
-  
-  const form = document.querySelector('form');
-  
-  
-  // Handle form submissions
-  form.addEventListener('submit', async event => {
-    event.preventDefault();
-    const username = document.querySelector('#username').value;
-    const comment = document.querySelector('#comment').value;
-    const response = await fetch('https://cars.nighthawkcodingsociety.com/comments', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ username, comment })
-    });
-    if (response.ok) {
-      form.reset();
-      fetchAndDisplayComments();
-    }
+<html>
+  <head>
+    <title>User Comments</title>
+  </head>
+  <body>
+    <h1>User Comments</h1>
+    <div id="comments">
+      <!-- comments will be displayed here -->
+    </div>
+    <h2>Add a Comment</h2>
+    <form id="comment-form">
+      <label>
+        Name:
+        <input type="text" id="username" required>
+      </label>
+      <br><br>
+      <label>
+        Comment:
+        <textarea id="comment" required></textarea>
+      </label>
+      <br><br>
+      <button type="submit">Submit</button>
+    </form>
+
+<script>
+const commentsDiv = document.querySelector('#comments');
+
+// Fetch comments and display them
+async function fetchAndDisplayComments() {
+  const response = await fetch('https://cars.nighthawkcodingsociety.com/comments');
+  const comments = await response.json();
+  commentsDiv.innerHTML = '';
+  comments.forEach(comment => {
+    commentsDiv.innerHTML += `
+      <p><strong>${comment.username}</strong> said: ${comment.comment}</p>
+    `;
   });
-  
-  fetchAndDisplayComments();
-  
-      
-   </script>
-    </body>
-  </html>
-  </container>
-  
+}
+
+const form = document.querySelector('form');
+
+// Handle form submissions
+form.addEventListener('submit', async event => {
+  event.preventDefault();
+  const username = document.querySelector('#username').value;
+  const comment = document.querySelector('#comment').value;
+  const response = await fetch('https://cars.nighthawkcodingsociety.com/comments', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ username, comment })
+  });
+  if (response.ok) {
+    form.reset();
+    fetchAndDisplayComments();
+  }
+});
+
+fetchAndDisplayComments();
+
+
+    
+ </script>
+  </body>
+</html>
+</container>
+
 
 
 <style>
