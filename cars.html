@@ -17,19 +17,11 @@
                   <li><a href="Quiz.html">QUIZ</a></li>
                   <li><a href="profile.html">PROFILE</a></li>
                   </ul>
-                <script>
-                  var loader = document.getElementById("preloader");
-                  window.addEventListener("load", function(){
-                      loader.style.display = "none";
-                  })
-              </script> 
           </div>
       </nav>
-  
    <h1>Car Search</h1>
       <table id="table">
         <thead>
-
         <tr>
             <th>Make</th>
             <th>Model</th>
@@ -118,6 +110,7 @@
           document.getElementById("carData").remove()
           const [desiredMake, desiredModel, desiredPrice, desiredYear, desiredEngine, desiredBodyStyle] = getInput()
           const tbody = document.createElement("tbody")
+          // Set tbody id to carData - ensure that carData is still on page
           tbody.id = "carData"
           // Iterate over each row from the data in the database
           for (const row of data) {
@@ -145,7 +138,8 @@
             const price = document.createElement("td");
             const engine = document.createElement("td");
             const body_style = document.createElement("td");
-
+            
+            // Set innerHTML to values of make, model, year, etc.
             make.innerHTML = row.make;
             model.innerHTML = row.model; 
             year.innerHTML = row.year; 
