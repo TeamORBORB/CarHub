@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "cors": "^2.8.5",
-    "proxy": "https://cars.nighthawkcodingsociety.com/api/cars/"
-  }
-}
