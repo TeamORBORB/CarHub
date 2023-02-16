@@ -90,10 +90,6 @@
 
         let locationsURL = `https://cars.nighthawkcodingsociety.com/dealerships`;
         fetch(locationsURL).then(d => d.json()).then(dealershipLocations => {
-        // For demo purposes, let's say there are two dealerships
-        // located at the following coordinates:
-        // var dealership1 = { lat: 33.015200, lng: -117.083380 };
-        // var dealership2 = { lat: 34.0522, lng: -118.2437 };
 
         let nearestDealership = findShortestLocation(
           {

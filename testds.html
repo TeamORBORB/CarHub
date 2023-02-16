@@ -4,11 +4,29 @@
   <head>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
+
+
+
+
       $(document).ready(function() {
-        // Get the user's current location using the Geolocation API
+        // Geolocation API
         navigator.geolocation.getCurrentPosition(function(position) {
           var userLat = position.coords.latitude;
           var userLng = position.coords.longitude;
+
+
+          // the fetch 
+            $.ajax({
+                type: 'GET',
+                url: 'database-fetch.php',
+                dataType: 'json',
+                success: function (data) {
+                    console.log(data);
+                }
+            });
+        });
+
+
 
           // fetch the dealerships
           $.get("get_dealerships.php", function(data) {
