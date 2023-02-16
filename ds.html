@@ -56,30 +56,63 @@
         }
       }
 
+      function findShortestLocation(userLocation, dealershipLocations) {
+        // Calculate the distance between the user's location and each dealership
+        let shortestDistance = Infinity
+        let nearestDealership = dealershipLocations.pop();
+
+        for(let location of dealershipLocations) {
+          let distance = calculateDistance(
+            userLocation.latitude, 
+            userLocation.longitude, 
+            location.latitude,
+            location.longitude,
+          );
+
+          if(distance < shortestDistance) {
+            nearestDealership = location;
+            shortestDistance = distance;
+          }
+        }
+
+        if(!nearestDealership) {
+          alert("couldn't find the shortest distance. Possibly due to empty dealership location list");
+        }
+
+        return nearestDealership;
+        // Determine which dealership is closer
+
+      }
+
       function showPosition(position) {
         document.getElementById("location").innerHTML = "Latitude: " + position.coords.latitude +
           "<br>Longitude: " + position.coords.longitude;
 
+
+        let locationsURL = `https://cars.nighthawkcodingsociety.com/dealerships`;
+        fetch(locationsURL).then(d => d.json()).then(dealershipLocations => {
         // For demo purposes, let's say there are two dealerships
         // located at the following coordinates:
-        var dealership1 = { lat: 33.015200, lng: -117.083380 };
-        var dealership2 = { lat: 34.0522, lng: -118.2437 };
+        // var dealership1 = { lat: 33.015200, lng: -117.083380 };
+        // var dealership2 = { lat: 34.0522, lng: -118.2437 };
 
+        let nearestDealership = findShortestLocation(
+          {
+            latitude: position.coords.latitude, 
+            longitude: position.coords.longitude
+          },
+          dealershipLocations
+        );
 
-        // Calculate the distance between the user's location and each dealership
-        var distance1 = calculateDistance(position.coords.latitude, position.coords.longitude, dealership1.lat, dealership1.lng);
-        var distance2 = calculateDistance(position.coords.latitude, position.coords.longitude, dealership2.lat, dealership2.lng);
+        document.getElementById("dealership").innerHTML = `
+          The nearest dealership is located at:<br />
+          Name: ${nearestDealership.name}<br />
+          Address: ${nearestDealership.address}<br />
+          Latitude: ${nearestDealership.latitude}<br />
+          Longitude: ${nearestDealership.longitude}
+          `;
 
-        // Determine which dealership is closer
-        var nearestDealership;
-        if (distance1 < distance2) {
-          nearestDealership = dealership1;
-        } else {
-          nearestDealership = dealership2;
-        }
-
-        document.getElementById("dealership").innerHTML = "The nearest dealership is located at:<br>" +
-          "Latitude: " + nearestDealership.lat + "<br>Longitude: " + nearestDealership.lng;
+        });
       }
 
       function calculateDistance(lat1, lng1, lat2, lng2) {
