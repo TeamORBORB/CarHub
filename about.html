@@ -66,40 +66,134 @@
     }
   </style>
 
-  <title>Welcome</title>
-</head>
-<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <h1>Become a Subscriber by adding you Initials</h1>
-<input id="inputvalue" type="text" placeholder="First and Last Initial 'A.B'">
-<button onclick="setID()">Submit </button>
+<p>API</p>
 
-<!---JS-->
+<table>
+  <thead>
+    <tr>
+      <th>Subscriber</th>
+    </tr>
+  </thead>
+  <tbody id="result">
+
+  </tbody>
+</table>
+
+<p>Create</p>
+
+<form action="javascript:create_user()">
+  <p><label>
+    Subscriber:
+    <input type="text" name="uid" id="uid" maxlength="3" placeholder="First and Last Initial 'A.B'" required>
+  </label>
+<p>
+  <button>Create</button>
+</p>
+  </p>
+</form>
+
 <script>
-  const btnE1 = document.querySelector('button');
-  const inputE1 = document.querySelector('input');
-  const listE1 = document.querySelector('u1');
+  const resultContainer=document.getElementById("result");
+  const url="https://cars.nighthawkcodingsociety.com/api/users"
+  const create_fetch=url+'/create';
+  const read_fetch=url+'/';
 
-  btnE1.addEventListener('click', () => {
-    const inputValue = inputE1.value;
-    listE1.insertAdjacentHTML('beforeend', '<li>inputValue</li>');
-  });
+  read_users();
+
+  function read_users(){
+    const read_options={
+      method:'GET',
+      mode:'cors',
+      cache:'default',
+      credentials:'omit',
+      headers:{
+        'Content-Type': 'application/json'
+      },
+    };
+    fetch(read_fetch, read_options)
+    .then(response => {
+    if (response.status !==200){
+      const errorMsg = 'Database read error:'+response.status;
+      console.log(errorMsg);
+      const tr=document.createElement("tr");
+      const td=document.createElement("td");
+      td.innerHTML=errorMsg;
+      tr.appendChild(td);
+      resultContainer.appendChild(tr);
+      return;
+    }
+    response.json().then(data =>{
+    console.log(data);
+            for (let row in data) {
+              console.log(data[row]);
+              add_row(data[row]);
+            }
+        })
+    
+  })
+.catch(err => {
+  consol.error(err);
+  const tr=document.createElement("tr");
+  const td=document.createElement("td");
+  td.innerHTML=err;
+  tr.appendChild(td);
+  resultContainer.appendChild(tr)
+});
+ }
+
+ function create_user(){
+  const body={
+    uid: document.getElementById("uid").value
+  };
+  const requestOptions={
+    method:'POST',
+    body:JSON.stringify(body),
+    headers:{
+      "content-type": "application/json",
+      'Authorization': 'Bearer my-token',
+    },
+  };
+
+  fetch(create_fetch, requestOptions)
+  .then(response => {
+    if(response.status !==200){
+      const errorMsg='Database create error:'+response.status;
+      console.log(errorMsg);
+      const tr=document.createElement("tr");
+      const td=document.createElement("td");
+      td.innerHTML=errorMsg;
+      tr.appendChild(td);
+      resultContainer.appendChild(tr);
+      return;
+    }
+    response.json().then(data =>{
+      console.log(data);
+      add_row(data);
+    })
+  })
+ }
+
+ function add_row(data){
+  const tr=document.createElement("tr");
+  const uid=document.createElement("td");
+
+  uid.innerHTML=data.uid;
+
+  tr.appendChild(uid);
+
+  resultContainer.appendChild(tr);
+ }
+
 </script>
 
-</body>
 </html>
-
-<script>
-  function setID() {
-    var userID = prompt("ID", userID);
-    localStorage.setItem("userID", userID);
-  }
-  var storedID = localStorage.getItem("userID");
-  </script>
-
-
-  <!------------------------------>
-
 <!-------------------------------->
         <div id ="preloader"></div>
         <script>
