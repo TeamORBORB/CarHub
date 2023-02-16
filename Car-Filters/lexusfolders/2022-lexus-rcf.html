@@ -78,7 +78,7 @@ const commentsDiv = document.querySelector('#comments');
 // Fetch comments and display them
 async function fetchAndDisplayComments() {
   try {
-    const response = await fetch('http://127.0.0.1:8055/comments');
+    const response = await fetch('https://cars.nighthawkcodingsociety.com/comments');
     const comments = await response.json();
     commentsDiv.innerHTML = '';
     comments.forEach(comment => {
@@ -99,7 +99,7 @@ form.addEventListener('submit', async event => {
   event.preventDefault();
   const username = document.querySelector('#username').value;
   const comment = document.querySelector('#comment').value;
-  const response = await fetch('http://127.0.0.1:8055/comments', {
+  const response = await fetch('https://cars.nighthawkcodingsociety.com/comments', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
