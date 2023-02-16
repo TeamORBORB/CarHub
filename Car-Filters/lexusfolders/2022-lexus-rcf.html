@@ -107,7 +107,7 @@ form.addEventListener('submit', async event => {
     },
     mode: 'no-cors',
     credentials: 'omit',
-    body: JSON.stringify({ ${comment[1]}, ${comment[2]} }),
+    body: JSON.stringify({ username, comment }),
   });
   if (response.ok) {
     form.reset();
