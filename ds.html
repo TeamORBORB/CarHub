@@ -16,14 +16,15 @@
 <body>
   <section class="header">
     <nav>
-      <a href="index.html"><img src="images/logo.png"></a>
+      <a href="index.html"><img src="/static/assets/logo.png"></a>
       <div class="nav-links">
         <ul>
-          <li><a href="index.html">HOME</a></li>
-          <li><a href="about.html">ABOUT</a></li>
-          <li><a href="inventory.html">INVENTORY</a></li>
-          <li><a href="ds.html">DEALERSHIPS</a></li>
-          <li><a href="cars.html">SEARCH</a></li>
+          <li><a href="https://teamorborb.github.io/CarHub/index.html">HOME</a></li>
+          <li><a href="https://teamorborb.github.io/CarHub/about.html">ABOUT</a></li>
+          <li><a href="https://teamorborb.github.io/CarHub/inventory.html">INVENTORY</a></li>
+          <li><a href=".">DEALERSHIP</a></li>
+          <li><a href="https://teamorborb.github.io/CarHub/Quiz.html">QUIZ</a></li>
+          <li><a href="https://teamorborb.github.io/CarHub/profile.html">PROFILE</a></li>
 
         </ul>
       </div>
@@ -49,6 +50,7 @@
       </div>
   </div>
   <script>
+    // gets the location of the user
       function getLocation() {
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(showPosition);
@@ -69,6 +71,7 @@
             location.latitude,
             location.longitude,
           );
+        // Determine which dealership is closer
 
           if(distance < shortestDistance) {
             nearestDealership = location;
@@ -81,8 +84,7 @@
         }
 
         return nearestDealership;
-        // Determine which dealership is closer
-
+        
       }
 
       function showPosition(position) {
@@ -90,8 +92,8 @@
           "<br>Longitude: " + position.coords.longitude;
 
 
-        //let locationsURL = `https://cars.nighthawkcodingsociety.com/dealerships`;
-        let locationsURL = `${location.origin}/dealerships`;
+        let locationsURL = `https://cars.nighthawkcodingsociety.com/dealerships`;
+       // let locationsURL = `${location.origin}/dealerships`;
         fetch(locationsURL).then(d => d.json()).then(dealershipLocations => {
 
         let nearestDealership = findShortestLocation(
@@ -101,7 +103,7 @@
           },
           dealershipLocations
         );
-
+          //displays the database info
         document.getElementById("dealership").innerHTML = `
           The nearest dealership is located at:<br />
           Name: ${nearestDealership.name}<br />
