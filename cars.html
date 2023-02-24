@@ -29,7 +29,7 @@
             <th>Price</th>
             <th>Engine</th>
             <th>Body Style</th>
-            <!-- <th>Likes</th> -->
+            <th>Description</th>
         </tr>
         </thead>
         <tr id="result"></tr>
@@ -48,6 +48,8 @@
           <input name="engine" id="engine">
           <label for="body_style">Body Style</label>
           <input name="body_style" id="body_style">
+          <label for="desc">Description</label>
+          <input name="desc" id="desc">
           <button onclick="makeTable(carData)" style="background-color: #ffff; color: black;">Search</button>
           <button onclick="clearTable(carData)" style="background-color: #f2f2f2; color: black">Clear</button>
        <script>
@@ -140,7 +142,7 @@
             const engine = document.createElement("td");
             const body_style = document.createElement("td");
             
-            // Set innerHTML to values of make, model, year, etc.
+            // Set innerHTML to values of make, model, year, etc. from the API
             make.innerHTML = row.make;
             model.innerHTML = row.model; 
             year.innerHTML = row.year; 
@@ -148,6 +150,7 @@
             engine.innerHTML = row.engine; 
             body_style.innerHTML = row.body_style; 
 
+            // Add data for make, model, price, etc. to the table row
             tr.appendChild(make);
             tr.appendChild(model);
             tr.appendChild(year);
@@ -155,6 +158,7 @@
             tr.appendChild(engine);
             tr.appendChild(body_style);
 
+            // Add row to the table
             tbody.appendChild(tr);
           }
           // Add the data from tbody into the table
