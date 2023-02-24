@@ -1,5 +1,103 @@
 <!DOCTYPE html>
 <html>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&family=Rubik+Bubbles&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <section class="header">
+        <nav>
+            <a href="index.html"><img src="images/logo.png"></a>
+            <div class="nav-links">
+                <ul>
+                  <li><a href="index.html">HOME</a></li>
+                  <li><a href="about.html">ABOUT</a></li>
+                  <li><a href="inventory.html">INVENTORY</a></li>
+                  <li><a href="ds.html">DEALERSHIPS</a></li>
+                  <li><a href="cars.html">SEARCH</a></li>
+                    </ul>
+            </div>
+        </nav>
+        <table>
+            <thead>
+            <tr>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Year</th>
+                <th>Price</th>
+                <th>Likes</th>
+            </tr>
+            </thead>
+            <tbody id="result">
+             </tbody>
+          </table>
+           
+           <script>
+            const resultContainer = document.getElementById("result");
+          
+            const url = "https://cars.nighthawkcodingsociety.com/api/cars/";
+            const headers = {
+              method: 'GET',
+              mode: 'cors',
+              cache: 'default',
+              credentials: 'omit', 
+              headers: {
+                'Content-Type': 'application/json'
+              },
+            };
+         
+            // Fetch data from the database
+            fetch(url, headers)
+              .then(response => {
+                if (response.status != 200) {
+                    const errorMsg = 'Database response error: ' + response.status;
+                    console.log(errorMsg);
+                    const tr = document.createElement("tr");
+                    const td = document.createElement("td");
+                    td.innerHTML = errorMsg;
+                    tr.appendChild(td);
+                    resultContainer.appendChild(tr);
+                    return;
+                }
+                // Parse the json and add it to the webpage
+                response.json().then(data => {
+                    console.log(data);      
+    
+                    // adding a new row for each car from each json node
+                    for (const row of data) {
+                      
+                      const tr = document.createElement("tr");
+                      const make = document.createElement("td");
+                      const model = document.createElement("td");
+                      const year = document.createElement("td");
+                      const price = document.createElement("td");
+                      const likes = document.createElement("td");
+    
+                      make.innerHTML = row.make;
+                      model.innerHTML = row.model; 
+                      year.innerHTML = row.year; 
+                      price.innerHTML = row.price; 
+          
+                      tr.appendChild(make);
+                      tr.appendChild(model);
+                      tr.appendChild(year);
+                      tr.appendChild(price);
+                      tr.appendChild(likes);
+                           
+                      resultContainer.appendChild(tr);
+                    }
+                })
+            })
+            .catch(err => {
+              console.error(err);
+              const tr = document.createElement("tr");
+              const td = document.createElement("td");
+              td.innerHTML = err;
+              tr.appendChild(td);
+              resultContainer.appendChild(tr);
+            }); 
+            </script>
 <head>
     <title>Add a Car</title>
 </head>
@@ -56,54 +154,82 @@
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
-                alert('Car has been added successfully!');
+                alert("Car has been added successfully!");
             } catch (error) {
                 console.error('Error:', error);
+                alert("Please enter all fields.")
             }
         });
+
     </script>
 </body>
-    <style>
-        form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            background-color: #f2f2f2;
-            border-radius: 10px;
-        }
 
-        label {
-            margin: 10px;
-            font-size: 16px;
-            font-weight: bold;
-            text-align: center;
-            color: #333;
-        }
+<style>
+    table {
+    border-collapse: collapse;
+    margin-top: 20px;
+    width: 50%;
+    float: right;
+    background-color: #4b4e52
+    }
 
-        input[type="text"] {
-            padding: 10px;
-            margin: 10px;
-            width: 100%;
-            border: none;
-            border-radius: 5px;
-            box-shadow: 0 0 5px rgba(0,0,0,0.2);
-        }
+    thead {
+    background-color: #ddd;
+    font-weight: bold;
+    }
 
-        button[type="submit"] {
-            margin: 20px;
-            padding: 10px 20px;
-            background-color: #333;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-        }
+    td, th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    }
 
-        button[type="submit"]:hover {
-            background-color: #555;
-        }
-    </style>
+    form {
+    margin-top: 20px;
+    width: 50%;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    }
+
+    label {
+        margin: 10px;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        color: #333;
+    }
+
+    input[type="text"] {
+        padding: 10px;
+        margin: 10px;
+        width: 100%;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    }
+
+    button[type="submit"] {
+        margin: 20px;
+        padding: 10px 20px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    button[type="submit"]:hover {
+        background-color: #555;
+    }
+    body {
+    background-color: #D2DBDD;
+}
+</style>
 </html>
