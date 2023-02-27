@@ -38,7 +38,7 @@
             <th>Price</th>
             <th>Engine</th>
             <th>Body Style</th>
-            <th>Description</th>
+            <th>Owner</th>
         </tr>
         </thead>
         <tr id="result"></tr>
@@ -57,8 +57,8 @@
           <input name="engine" id="engine">
           <label for="body_style">Body Style</label>
           <input name="body_style" id="body_style">
-          <label for="desc">Description</label>
-          <input name="desc" id="desc">
+          <label for="owner">Owner</label>
+          <input name="owner" id="owner">
           <button onclick="makeTable(carData)" style="background-color: #ffff; color: black;">Search</button>
           <button onclick="clearTable(carData)" style="background-color: #f2f2f2; color: black">Clear</button>
        <script>
@@ -120,7 +120,7 @@
         function makeTable(data){
           // Remove current carData - prepare for new search
           document.getElementById("carData").remove()
-          const [desiredMake, desiredModel, desiredPrice, desiredYear, desiredEngine, desiredBodyStyle] = getInput()
+          const [desiredMake, desiredModel, desiredPrice, desiredYear, desiredEngine, desiredBodyStyle, desiredOwner] = getInput()
           const tbody = document.createElement("tbody")
           // Set tbody id to carData - ensure that carData is still on page
           tbody.id = "carData"
@@ -140,7 +140,9 @@
             if (desiredEngine && !(row.engine.toUpperCase() === desiredEngine.toUpperCase()))
               continue
             if (desiredBodyStyle && !(row.body_style.toUpperCase() === desiredBodyStyle.toUpperCase()))
-              continue         
+              continue    
+            if (desiredOwner && !(row.owner.toUpperCase() === desiredOwner.toUpperCase()))
+              continue        
 
             // If all values match, create table elements
             const tr = document.createElement("tr");
@@ -150,6 +152,7 @@
             const price = document.createElement("td");
             const engine = document.createElement("td");
             const body_style = document.createElement("td");
+            const owner = document.createElement("td");
             
             // Set innerHTML to values of make, model, year, etc. from the API
             make.innerHTML = row.make;
@@ -158,6 +161,7 @@
             price.innerHTML = row.price; 
             engine.innerHTML = row.engine; 
             body_style.innerHTML = row.body_style; 
+            owner.innerHTML = row.owner; 
 
             // Add data for make, model, price, etc. to the table row
             tr.appendChild(make);
@@ -166,6 +170,7 @@
             tr.appendChild(price);
             tr.appendChild(engine);
             tr.appendChild(body_style);
+            tr.appendChild(owner);
 
             // Add row to the table
             tbody.appendChild(tr);
@@ -181,6 +186,7 @@
           let year = document.getElementById("year").value
           let engine = document.getElementById("engine").value
           let body_style = document.getElementById("body_style").value
+          let owner = document.getElementById("owner").value
 
           if (make === null)
             make = null
@@ -199,8 +205,11 @@
           
           if (body_style === null)
             body_style = null
+
+          if (owner === null)
+            owner = null
           
-          return [make, model, price, year, engine, body_style]
+          return [make, model, price, year, engine, body_style, owner]
         }
         // Clear table
         function clearTable(){

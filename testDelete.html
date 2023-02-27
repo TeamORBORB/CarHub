@@ -16,14 +16,15 @@
           },
           body: JSON.stringify({ id: id })
         })
-        .then(response => {
+        .then((response) => response.json())
+ {
           // Check if the response from the server is ok
           if (!response.ok) {
             throw new Error('Network response was not ok');
           }
           // Reload the page to show the updated list of cars
           window.location.reload();
-        })
+        }
         .catch(error => {
           console.error('Error deleting car:', error);
         });
