@@ -70,7 +70,7 @@ async function fetchAndDisplayComments() {
     commentsDiv.innerHTML = '';
     comments.forEach(comment => {
       commentsDiv.innerHTML += `
-      <p><strong>${comment[1]}</strong> said: ${comment[2]}</p>
+      <p><strong>${comment[1]}</strong> said: ${comment[2]} at: ${comment[3]}</p>
       `;
     });
   } catch (error) {
