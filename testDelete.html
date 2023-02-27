@@ -1,12 +1,26 @@
 <script>
+    function deleteCarById() {
+      // Get the ID from the user input
+      var id = prompt("Enter the ID of the car you want to delete:");
+      // Call the deleteCar function with the user-provided ID as the argument
+      deleteCar(id);
+    }
     function deleteCar(id) {
       // Confirm the user wants to delete the car
       if (confirm("Are you sure you want to delete this car?")) {
         // Send a DELETE request to the Flask API endpoint
         fetch('https://cars.nighthawkcodingsociety.com/api/cars/delete/' + id, {
           method: 'DELETE',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ id: id })
         })
         .then(response => {
+          // Check if the response from the server is ok
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
           // Reload the page to show the updated list of cars
           window.location.reload();
         })
@@ -14,13 +28,6 @@
           console.error('Error deleting car:', error);
         });
       }
-    }
-  
-    function deleteCarById() {
-      // Get the ID from the user input
-      var id = prompt("Enter the ID of the car you want to delete:");
-      // Call the deleteCar function with the user-provided ID as the argument
-      deleteCar(id);
     }
   </script>
   
