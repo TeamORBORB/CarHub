@@ -70,7 +70,7 @@ async function fetchAndDisplayComments() {
     commentsDiv.innerHTML = '';
     comments.forEach(comment => {
       commentsDiv.innerHTML += `
-      <p><strong>${comment[1]}</strong> said: ${comment[2]} at: ${comment[3]}</p>
+      <p><strong>${comment[1]}</strong> said: ${comment[2]}</p>
       `;
     });
   } catch (error) {
@@ -94,7 +94,7 @@ form.addEventListener('submit', async event => {
     },
     mode: 'cors',
     credentials: 'omit',
-    body: JSON.stringify({ username, comment, time }),
+    body: JSON.stringify({ username, comment }),
   });
   if (response.ok) {
     form.reset();
