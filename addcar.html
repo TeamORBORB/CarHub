@@ -26,6 +26,8 @@
                 <th>Model</th>
                 <th>Year</th>
                 <th>Price</th>
+                <th>Engine</th>
+                <th>Body Style</th>
                 <th>Description</th>
                 <th>Owner</th>
             </tr>
@@ -51,6 +53,7 @@
             // Fetch data from the database
             fetch(url, headers)
               .then(response => {
+                // If the response is not OK, log the error and display it on the webpage
                 if (response.status != 200) {
                     const errorMsg = 'Database response error: ' + response.status;
                     console.log(errorMsg);
@@ -65,35 +68,46 @@
                 response.json().then(data => {
                     console.log(data);      
     
-                    // adding a new row for each car from each json node
                     for (const row of data) {
                       
+                      // Create new table row and cells for each car attribute
                       const tr = document.createElement("tr");
                       const make = document.createElement("td");
                       const model = document.createElement("td");
                       const year = document.createElement("td");
                       const price = document.createElement("td");
+                      const engine = document.createElement("td");
+                      const body_style = document.createElement("td");
                       const desc = document.createElement("td");
                       const owner = document.createElement("td");
-    
+
+                      // Set the inner HTML of each cell to the corresponding car attribute value
                       make.innerHTML = row.make;
                       model.innerHTML = row.model; 
                       year.innerHTML = row.year; 
                       price.innerHTML = row.price;
+                      engine.innerHTML = row.engine; 
+                      body_style.innerHTML = row.body_style;
                       desc.innerHTML = row.desc;
                       owner.innerHTML = row.owner
-          
+                     
+                      // Append each cell to the row
+                      // Allows the data to be added to the newly made table
                       tr.appendChild(make);
                       tr.appendChild(model);
                       tr.appendChild(year);
                       tr.appendChild(price);
+                      tr.appendChild(engine);
+                      tr.appendChild(body_style);
                       tr.appendChild(desc);
                       tr.appendChild(owner);
-                           
+                      
+                      // Append the row to the container element
                       resultContainer.appendChild(tr);
                     }
                 })
             })
+            // If an error occurs, log it to the console and display an error message to the user
             .catch(err => {
               console.error(err);
               const tr = document.createElement("tr");
@@ -128,11 +142,11 @@
     </form>
 
     <script>
-      
+         // Add an event listener to the form to submit car data
         const form = document.getElementById('carForm');
         form.addEventListener('submit', async function(event) {
-            event.preventDefault();
             
+            // Retrieve the input values from the form
             const make = document.getElementById('make').value;
             const model = document.getElementById('model').value;
             const price = document.getElementById('price').value;
@@ -143,11 +157,13 @@
             const owner = document.getElementById('owner').value;
             
             try {
+                // Use the Fetch API to submit car data to the server
                 const response = await fetch('https://cars.nighthawkcodingsociety.com/api/cars/create', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
                     },
+                    // Use JSON.stringify to convert the input values into a JSON string that can be sent to the server as the request body
                     body: JSON.stringify({
                         make: make,
                         model: model,
@@ -159,14 +175,16 @@
                         owner: owner
                     })
                 });
-                
+                // Check if the response from the server is ok
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
+                // Display a success message to the user
                 alert("Car has been added successfully!");
             } catch (error) {
+                // If an error occurs, log it to the console and display an error message to the user
                 console.error('Error:', error);
-                alert("Please enter all fields.")
+                alert("Please enter all fields or check if added car is a duplicate.")
             }
         });
 
