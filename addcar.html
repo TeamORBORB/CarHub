@@ -154,6 +154,7 @@
          // Add an event listener to the form to submit car data
         const form = document.getElementById('carForm');
         form.addEventListener('submit', async function(event) {
+            event.preventDefault();
             
             // Retrieve the input values from the form
             const make = document.getElementById('make').value;
