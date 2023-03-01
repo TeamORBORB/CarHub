@@ -34,9 +34,11 @@
               </script>
           </div>
       </nav>
+      <!--title part of the page please change maybe later so it doesn't look like the rest of the site-->
     <div class = "sub-header">
         <h1 style="text-align: center; color: rgb(114, 142, 167);">About Us</h1>
     </div>
+    <!--ad caption later about our website-->
     <div class = "sub-header h1">
         <p> Welcome to our car page!
         </p>
@@ -47,6 +49,8 @@
       <!-- Begin Page Content-->
 
 <!--ab us-->
+<!--the classes can be found in the scss - luna-->
+<!--please do not change :)-->
 <section class="about-us">
 
 
@@ -56,8 +60,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <!--padding is king i need to use it more-->
   <style>
+    
     body{
       display:flex;
       flex-direction: column;
@@ -83,7 +88,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <table>
-
+<!--table which displays of the user data and information aka the sub list:/-->
 <h1>Join our Subscriber List</h1>
   <thead>
     <tr>
@@ -94,13 +99,14 @@
 
   </tbody>
 </table>
-
+<!--where the user insert's their info (need to add a class bc someones user sign in boxes is affecting all of input boxes :()-->
 <form action="javascript:create_user()">
   <p><label>
     Subscriber:
     <input type="text" name="uid" id="uid" maxlength="3" placeholder="First and Last Initial 'A.B'" required>
   </label>
 <p>
+  <!--holy grail button to make them the sub :< :)-->
   <button>Create</button>
 </p>
   </p>
@@ -113,7 +119,7 @@
   const read_fetch=url+'/';
 
   read_users();
-
+// the CRUDDDDDD this is the GET
   function read_users(){
     const read_options={
       method:'GET',
@@ -124,11 +130,13 @@
         'Content-Type': 'application/json'
       },
     };
+    //fetching and making the element in the table 
     fetch(read_fetch, read_options)
     .then(response => {
     if (response.status !==200){
       const errorMsg = 'Database read error:'+response.status;
       console.log(errorMsg);
+      //will affect the td and tr in the tables bro
       const tr=document.createElement("tr");
       const td=document.createElement("td");
       td.innerHTML=errorMsg;
@@ -154,11 +162,12 @@
   resultContainer.appendChild(tr)
 });
  }
-
+//making the user for the table
  function create_user(){
   const body={
     uid: document.getElementById("uid").value
   };
+  //always got to post-luna
   const requestOptions={
     method:'POST',
     body:JSON.stringify(body),
@@ -167,7 +176,7 @@
       'Authorization': 'Bearer my-token',
     },
   };
-
+//fetch fetch !!!!
   fetch(create_fetch, requestOptions)
   .then(response => {
     if(response.status !==200){
@@ -180,13 +189,14 @@
       resultContainer.appendChild(tr);
       return;
     }
+    //adding rows for the better of the world
     response.json().then(data =>{
       console.log(data);
       add_row(data);
     })
   })
  }
-
+//adding the elements aka the subs names or initials into the table 
  function add_row(data){
   const tr=document.createElement("tr");
   const uid=document.createElement("td");
@@ -194,14 +204,14 @@
   uid.innerHTML=data.uid;
 
   tr.appendChild(uid);
-
+//yayayayyaya
   resultContainer.appendChild(tr);
  }
 
 </script>
 
 </html>
-<!-------------------------------->
+<!---------the preloader by the Ethan Tran----------------------->
         <div id ="preloader"></div>
         <script>
             var loader = document.getElementById("preloader");
@@ -214,4 +224,13 @@
 <!-------------------------------->
 <section class="about-col">
 <h1>Join Our Subscriber List</h1>
-
+<!--delete this poop later-->
+<!--if (response.status !==200){
+  const errorMsg = 'Database read error:'+response.status;
+  console.log(errorMsg);
+  //will affect the td and tr in the tables bro
+  const tr=document.createElement("tr");
+  const td=document.createElement("td");
+  td.innerHTML=errorMsg;
+  tr.appendChild(td);
+  resultContainer.appendChild(tr);-->
